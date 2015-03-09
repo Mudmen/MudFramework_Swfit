@@ -26,20 +26,7 @@ class MudLocationManager: MudManager ,CLLocationManagerDelegate,UIAlertViewDeleg
         return Static.instance!
     }
     
-    func setmanager() {
-        if (locationManager == nil) {
-            geocoder = CLGeocoder()
-            locationManager = CLLocationManager()
-            locationManager?.delegate = self;
-            if (CurrentDeviceSystemVersion >= 8.0) {
-//                locationManager?.requestWhenInUseAuthorization()
-                locationManager?.requestAlwaysAuthorization()
-            }
-            locationManager?.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-            locationManager?.activityType = CLActivityType.Fitness
-        }
-    }
-    
+    //MARK: - Public API
     func startUpdatingLocation() {
         self.setmanager()
         if CLLocationManager.locationServicesEnabled() {
@@ -54,7 +41,22 @@ class MudLocationManager: MudManager ,CLLocationManagerDelegate,UIAlertViewDeleg
         locationManager?.stopUpdatingLocation()
     }
     
-    //MARK: - Delegate
+    //MARK: - Private API
+    private func setmanager() {
+        if (locationManager == nil) {
+            geocoder = CLGeocoder()
+            locationManager = CLLocationManager()
+            locationManager?.delegate = self;
+            if (CurrentDeviceSystemVersion >= 8.0) {
+                //                locationManager?.requestWhenInUseAuthorization()
+                locationManager?.requestAlwaysAuthorization()
+            }
+            locationManager?.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+            locationManager?.activityType = CLActivityType.Fitness
+        }
+    }
+    
+    //MARK: - Delegate * self can't use it
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         geocoder?.reverseGeocodeLocation(locations[0] as CLLocation, completionHandler: { (resultArray, error) -> Void in
             if resultArray.count > 0 {

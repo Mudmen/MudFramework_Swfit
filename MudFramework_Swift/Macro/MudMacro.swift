@@ -8,4 +8,4 @@
 
 import UIKit
 
-let CurrentDeviceSystemVersion = (UIDevice.currentDevice().systemVersion as NSString).floatValue
+let CurrentDeviceSystemVersion = (UIDevice.currentDevice().systemVersion as NSString).floatValue //current system version

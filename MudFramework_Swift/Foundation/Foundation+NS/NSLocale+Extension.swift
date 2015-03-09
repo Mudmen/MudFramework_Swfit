@@ -9,6 +9,7 @@
 import Foundation
 
 extension NSLocale {
+    //get current system language
     class func systemLanguage()->String {
         var lanArray: Array =  NSLocale.preferredLanguages()
         var language: String = lanArray[0] as String
@@ -20,6 +21,7 @@ extension NSLocale {
         return language
     }
     
+    //current language is english or not
     class func isEnglish()->Bool {
         var lanArray: Array =  NSLocale.preferredLanguages()
         var language: String = lanArray[0] as String

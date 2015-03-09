@@ -40,6 +40,9 @@ class MudNavigationBar: UINavigationBar {
 //                self.topItem.leftBarButtonItems = leftItems;
 //            }
 //        }
+        
+        
+        //set navi item left edge and right edge
         var rightBarButtonItemsCount = self.topItem?.rightBarButtonItems?.count
         if rightBarButtonItemsCount > 0 {
             var rightItems: NSMutableArray = NSMutableArray(array: self.topItem!.rightBarButtonItems!)

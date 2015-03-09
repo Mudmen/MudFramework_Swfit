@@ -12,6 +12,7 @@ class MudNavigationController: UINavigationController {
     var autorotate:Bool?
     
     override func viewDidLoad() {
+        // set custom navi bar
         var navibar: MudNavigationBar = MudNavigationBar()
         self.setValue(navibar, forKey: "navigationBar")
         super.viewDidLoad()

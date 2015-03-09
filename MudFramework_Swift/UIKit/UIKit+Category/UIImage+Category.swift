@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIImage {
+    // get image with color
     class func imageWithColor(icolor: UIColor,andSize size: CGSize)->UIImage {
         var rect:CGRect = CGRectMake(0.0,0.0,size.width,size.height)
         UIGraphicsBeginImageContext(rect.size)

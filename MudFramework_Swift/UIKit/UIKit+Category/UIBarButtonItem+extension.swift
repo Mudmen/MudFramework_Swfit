@@ -10,6 +10,7 @@ import UIKit
 
 extension UIBarButtonItem {
     
+    //get item with image
     class func itemWithImage(image: UIImage?, target: AnyObject,action: Selector) ->UIBarButtonItem {
         var button: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
         button.frame = CGRectMake(0, 0, 24, 44);
@@ -20,6 +21,7 @@ extension UIBarButtonItem {
         return item;
     }
     
+    //get item with string
     class func itemWithTitle(title: NSString, target: AnyObject ,action: Selector)->UIBarButtonItem {
         var button:UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
         button.backgroundColor = UIColor.clearColor()
@@ -42,11 +44,13 @@ extension UIBarButtonItem {
         return item;
     }
     
+    //get item with custom view
     class func itemWithCustomView(view: UIView)->UIBarButtonItem {
         var item: UIBarButtonItem = UIBarButtonItem(customView: view)
         return item;
     }
 
+    //set item title color
     func setTitleColor(color: UIColor, forState state: UIControlState) {
         var button: UIButton = self.customView as UIButton
         button.setTitleColor(color, forState:UIControlState.Normal)
