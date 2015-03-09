@@ -7,11 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		64AAF69E1A75DD68001366A7 /* MudFramework_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 64AAF69D1A75DD68001366A7 /* MudFramework_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		64AAF6A41A75DD68001366A7 /* MudFramework_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AAF6981A75DD68001366A7 /* MudFramework_Swift.framework */; };
 		64AAF6AB1A75DD68001366A7 /* MudFramework_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AAF6AA1A75DD68001366A7 /* MudFramework_SwiftTests.swift */; };
-		64AAF6B71A75DE36001366A7 /* MudTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AAF6B61A75DE36001366A7 /* MudTableViewController.swift */; };
-		64AAF6B91A75DE52001366A7 /* MudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AAF6B81A75DE52001366A7 /* MudViewController.swift */; };
+		64ED49B21AAD4AFC00EFE6FE /* MudLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64ED49951AAD4AFC00EFE6FE /* MudLocalization.strings */; };
+		64ED49B31AAD4AFC00EFE6FE /* MudLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ED49971AAD4AFC00EFE6FE /* MudLocationManager.swift */; };
+		64ED49B41AAD4AFC00EFE6FE /* MudLocalString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ED499B1AAD4AFC00EFE6FE /* MudLocalString.swift */; };
+		64ED49B51AAD4AFC00EFE6FE /* MudManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ED499C1AAD4AFC00EFE6FE /* MudManager.swift */; };
+		64ED49B61AAD4AFC00EFE6FE /* MudRequestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ED499D1AAD4AFC00EFE6FE /* MudRequestBase.swift */; };
+		64ED49B71AAD4AFC00EFE6FE /* MudRequestCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ED499E1AAD4AFC00EFE6FE /* MudRequestCenter.swift */; };
+		64ED49B81AAD4AFC00EFE6FE /* NSError+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ED49A01AAD4AFC00EFE6FE /* NSError+extension.swift */; };
+		64ED49B91AAD4AFC00EFE6FE /* NSLocale+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ED49A11AAD4AFC00EFE6FE /* NSLocale+Extension.swift */; };
+		64ED49BA1AAD4AFC00EFE6FE /* MudMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ED49A31AAD4AFC00EFE6FE /* MudMacro.swift */; };
+		64ED49BB1AAD4AFC00EFE6FE /* MudNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ED49A51AAD4AFC00EFE6FE /* MudNavigationBar.swift */; };
+		64ED49BC1AAD4AFC00EFE6FE /* MudNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ED49A61AAD4AFC00EFE6FE /* MudNavigationController.swift */; };
+		64ED49BD1AAD4AFC00EFE6FE /* MudTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ED49A71AAD4AFC00EFE6FE /* MudTableViewController.swift */; };
+		64ED49BE1AAD4AFC00EFE6FE /* MudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ED49A81AAD4AFC00EFE6FE /* MudViewController.swift */; };
+		64ED49BF1AAD4AFC00EFE6FE /* UIBarButtonItem+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ED49AA1AAD4AFC00EFE6FE /* UIBarButtonItem+extension.swift */; };
+		64ED49C01AAD4AFC00EFE6FE /* UIColor+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ED49AB1AAD4AFC00EFE6FE /* UIColor+Category.swift */; };
+		64ED49C11AAD4AFC00EFE6FE /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ED49AC1AAD4AFC00EFE6FE /* UIDevice+Extension.swift */; };
+		64ED49C21AAD4AFC00EFE6FE /* UIImage+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ED49AD1AAD4AFC00EFE6FE /* UIImage+Category.swift */; };
+		64ED49C31AAD4AFC00EFE6FE /* MudTabPageBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ED49AF1AAD4AFC00EFE6FE /* MudTabPageBar.swift */; };
+		64ED49C41AAD4AFC00EFE6FE /* MudTabPageBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ED49B01AAD4AFC00EFE6FE /* MudTabPageBarItem.swift */; };
+		64ED49C51AAD4AFC00EFE6FE /* MudTabPagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ED49B11AAD4AFC00EFE6FE /* MudTabPagesView.swift */; };
+		64ED49C61AAD4BB400EFE6FE /* MudLocationManager.swift in Headers */ = {isa = PBXBuildFile; fileRef = 64ED49971AAD4AFC00EFE6FE /* MudLocationManager.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		64ED49C71AAD4BB400EFE6FE /* MudLocalString.swift in Headers */ = {isa = PBXBuildFile; fileRef = 64ED499B1AAD4AFC00EFE6FE /* MudLocalString.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		64ED49C81AAD4BB400EFE6FE /* MudManager.swift in Headers */ = {isa = PBXBuildFile; fileRef = 64ED499C1AAD4AFC00EFE6FE /* MudManager.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		64ED49C91AAD4BB400EFE6FE /* MudRequestBase.swift in Headers */ = {isa = PBXBuildFile; fileRef = 64ED499D1AAD4AFC00EFE6FE /* MudRequestBase.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		64ED49CA1AAD4BB400EFE6FE /* MudRequestCenter.swift in Headers */ = {isa = PBXBuildFile; fileRef = 64ED499E1AAD4AFC00EFE6FE /* MudRequestCenter.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		64ED49CB1AAD4BB400EFE6FE /* NSError+extension.swift in Headers */ = {isa = PBXBuildFile; fileRef = 64ED49A01AAD4AFC00EFE6FE /* NSError+extension.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		64ED49CC1AAD4BB400EFE6FE /* NSLocale+Extension.swift in Headers */ = {isa = PBXBuildFile; fileRef = 64ED49A11AAD4AFC00EFE6FE /* NSLocale+Extension.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		64ED49CD1AAD4BB400EFE6FE /* MudMacro.swift in Headers */ = {isa = PBXBuildFile; fileRef = 64ED49A31AAD4AFC00EFE6FE /* MudMacro.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		64ED49CE1AAD4BB400EFE6FE /* MudNavigationBar.swift in Headers */ = {isa = PBXBuildFile; fileRef = 64ED49A51AAD4AFC00EFE6FE /* MudNavigationBar.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		64ED49CF1AAD4BB400EFE6FE /* MudNavigationController.swift in Headers */ = {isa = PBXBuildFile; fileRef = 64ED49A61AAD4AFC00EFE6FE /* MudNavigationController.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		64ED49D01AAD4BB400EFE6FE /* MudTableViewController.swift in Headers */ = {isa = PBXBuildFile; fileRef = 64ED49A71AAD4AFC00EFE6FE /* MudTableViewController.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		64ED49D11AAD4BB400EFE6FE /* MudViewController.swift in Headers */ = {isa = PBXBuildFile; fileRef = 64ED49A81AAD4AFC00EFE6FE /* MudViewController.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		64ED49D21AAD4BB400EFE6FE /* UIBarButtonItem+extension.swift in Headers */ = {isa = PBXBuildFile; fileRef = 64ED49AA1AAD4AFC00EFE6FE /* UIBarButtonItem+extension.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		64ED49D31AAD4BB400EFE6FE /* UIColor+Category.swift in Headers */ = {isa = PBXBuildFile; fileRef = 64ED49AB1AAD4AFC00EFE6FE /* UIColor+Category.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		64ED49D41AAD4BB400EFE6FE /* UIDevice+Extension.swift in Headers */ = {isa = PBXBuildFile; fileRef = 64ED49AC1AAD4AFC00EFE6FE /* UIDevice+Extension.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		64ED49D51AAD4BB400EFE6FE /* UIImage+Category.swift in Headers */ = {isa = PBXBuildFile; fileRef = 64ED49AD1AAD4AFC00EFE6FE /* UIImage+Category.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		64ED49D61AAD4BB400EFE6FE /* MudTabPageBar.swift in Headers */ = {isa = PBXBuildFile; fileRef = 64ED49AF1AAD4AFC00EFE6FE /* MudTabPageBar.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		64ED49D71AAD4BB400EFE6FE /* MudTabPageBarItem.swift in Headers */ = {isa = PBXBuildFile; fileRef = 64ED49B01AAD4AFC00EFE6FE /* MudTabPageBarItem.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		64ED49D81AAD4BB400EFE6FE /* MudTabPagesView.swift in Headers */ = {isa = PBXBuildFile; fileRef = 64ED49B11AAD4AFC00EFE6FE /* MudTabPagesView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,12 +63,30 @@
 /* Begin PBXFileReference section */
 		64AAF6981A75DD68001366A7 /* MudFramework_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MudFramework_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64AAF69C1A75DD68001366A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		64AAF69D1A75DD68001366A7 /* MudFramework_Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MudFramework_Swift.h; sourceTree = "<group>"; };
 		64AAF6A31A75DD68001366A7 /* MudFramework_SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MudFramework_SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64AAF6A91A75DD68001366A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64AAF6AA1A75DD68001366A7 /* MudFramework_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MudFramework_SwiftTests.swift; sourceTree = "<group>"; };
-		64AAF6B61A75DE36001366A7 /* MudTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudTableViewController.swift; sourceTree = "<group>"; };
-		64AAF6B81A75DE52001366A7 /* MudViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudViewController.swift; sourceTree = "<group>"; };
+		64ED49961AAD4AFC00EFE6FE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MudLocalization.strings; sourceTree = "<group>"; };
+		64ED49971AAD4AFC00EFE6FE /* MudLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudLocationManager.swift; sourceTree = "<group>"; };
+		64ED49981AAD4AFC00EFE6FE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MudLocalization.strings"; sourceTree = "<group>"; };
+		64ED499B1AAD4AFC00EFE6FE /* MudLocalString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudLocalString.swift; sourceTree = "<group>"; };
+		64ED499C1AAD4AFC00EFE6FE /* MudManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudManager.swift; sourceTree = "<group>"; };
+		64ED499D1AAD4AFC00EFE6FE /* MudRequestBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudRequestBase.swift; sourceTree = "<group>"; };
+		64ED499E1AAD4AFC00EFE6FE /* MudRequestCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudRequestCenter.swift; sourceTree = "<group>"; };
+		64ED49A01AAD4AFC00EFE6FE /* NSError+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+extension.swift"; sourceTree = "<group>"; };
+		64ED49A11AAD4AFC00EFE6FE /* NSLocale+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLocale+Extension.swift"; sourceTree = "<group>"; };
+		64ED49A31AAD4AFC00EFE6FE /* MudMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudMacro.swift; sourceTree = "<group>"; };
+		64ED49A51AAD4AFC00EFE6FE /* MudNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudNavigationBar.swift; sourceTree = "<group>"; };
+		64ED49A61AAD4AFC00EFE6FE /* MudNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudNavigationController.swift; sourceTree = "<group>"; };
+		64ED49A71AAD4AFC00EFE6FE /* MudTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudTableViewController.swift; sourceTree = "<group>"; };
+		64ED49A81AAD4AFC00EFE6FE /* MudViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudViewController.swift; sourceTree = "<group>"; };
+		64ED49AA1AAD4AFC00EFE6FE /* UIBarButtonItem+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+extension.swift"; sourceTree = "<group>"; };
+		64ED49AB1AAD4AFC00EFE6FE /* UIColor+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Category.swift"; sourceTree = "<group>"; };
+		64ED49AC1AAD4AFC00EFE6FE /* UIDevice+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		64ED49AD1AAD4AFC00EFE6FE /* UIImage+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Category.swift"; sourceTree = "<group>"; };
+		64ED49AF1AAD4AFC00EFE6FE /* MudTabPageBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudTabPageBar.swift; sourceTree = "<group>"; };
+		64ED49B01AAD4AFC00EFE6FE /* MudTabPageBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudTabPageBarItem.swift; sourceTree = "<group>"; };
+		64ED49B11AAD4AFC00EFE6FE /* MudTabPagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudTabPagesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +129,10 @@
 		64AAF69A1A75DD68001366A7 /* MudFramework_Swift */ = {
 			isa = PBXGroup;
 			children = (
-				64AAF69D1A75DD68001366A7 /* MudFramework_Swift.h */,
-				64AAF6B41A75DE36001366A7 /* Foundation */,
-				64AAF6B51A75DE36001366A7 /* UIKit */,
+				64ED49941AAD4AFC00EFE6FE /* CoreLocation */,
+				64ED49991AAD4AFC00EFE6FE /* Foundation */,
+				64ED49A21AAD4AFC00EFE6FE /* Macro */,
+				64ED49A41AAD4AFC00EFE6FE /* UIKit */,
 				64AAF69B1A75DD68001366A7 /* Supporting Files */,
 			);
 			path = MudFramework_Swift;
@@ -108,20 +163,84 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		64AAF6B41A75DE36001366A7 /* Foundation */ = {
+		64ED49941AAD4AFC00EFE6FE /* CoreLocation */ = {
 			isa = PBXGroup;
 			children = (
+				64ED49951AAD4AFC00EFE6FE /* MudLocalization.strings */,
+				64ED49971AAD4AFC00EFE6FE /* MudLocationManager.swift */,
+			);
+			path = CoreLocation;
+			sourceTree = "<group>";
+		};
+		64ED49991AAD4AFC00EFE6FE /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				64ED499A1AAD4AFC00EFE6FE /* Foundation+Custom */,
+				64ED499F1AAD4AFC00EFE6FE /* Foundation+NS */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
 		};
-		64AAF6B51A75DE36001366A7 /* UIKit */ = {
+		64ED499A1AAD4AFC00EFE6FE /* Foundation+Custom */ = {
 			isa = PBXGroup;
 			children = (
-				64AAF6B61A75DE36001366A7 /* MudTableViewController.swift */,
-				64AAF6B81A75DE52001366A7 /* MudViewController.swift */,
+				64ED499B1AAD4AFC00EFE6FE /* MudLocalString.swift */,
+				64ED499C1AAD4AFC00EFE6FE /* MudManager.swift */,
+				64ED499D1AAD4AFC00EFE6FE /* MudRequestBase.swift */,
+				64ED499E1AAD4AFC00EFE6FE /* MudRequestCenter.swift */,
+			);
+			path = "Foundation+Custom";
+			sourceTree = "<group>";
+		};
+		64ED499F1AAD4AFC00EFE6FE /* Foundation+NS */ = {
+			isa = PBXGroup;
+			children = (
+				64ED49A01AAD4AFC00EFE6FE /* NSError+extension.swift */,
+				64ED49A11AAD4AFC00EFE6FE /* NSLocale+Extension.swift */,
+			);
+			path = "Foundation+NS";
+			sourceTree = "<group>";
+		};
+		64ED49A21AAD4AFC00EFE6FE /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				64ED49A31AAD4AFC00EFE6FE /* MudMacro.swift */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		64ED49A41AAD4AFC00EFE6FE /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				64ED49A51AAD4AFC00EFE6FE /* MudNavigationBar.swift */,
+				64ED49A61AAD4AFC00EFE6FE /* MudNavigationController.swift */,
+				64ED49A71AAD4AFC00EFE6FE /* MudTableViewController.swift */,
+				64ED49A81AAD4AFC00EFE6FE /* MudViewController.swift */,
+				64ED49A91AAD4AFC00EFE6FE /* UIKit+Category */,
+				64ED49AE1AAD4AFC00EFE6FE /* UIKit+CustomView */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		64ED49A91AAD4AFC00EFE6FE /* UIKit+Category */ = {
+			isa = PBXGroup;
+			children = (
+				64ED49AA1AAD4AFC00EFE6FE /* UIBarButtonItem+extension.swift */,
+				64ED49AB1AAD4AFC00EFE6FE /* UIColor+Category.swift */,
+				64ED49AC1AAD4AFC00EFE6FE /* UIDevice+Extension.swift */,
+				64ED49AD1AAD4AFC00EFE6FE /* UIImage+Category.swift */,
+			);
+			path = "UIKit+Category";
+			sourceTree = "<group>";
+		};
+		64ED49AE1AAD4AFC00EFE6FE /* UIKit+CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				64ED49AF1AAD4AFC00EFE6FE /* MudTabPageBar.swift */,
+				64ED49B01AAD4AFC00EFE6FE /* MudTabPageBarItem.swift */,
+				64ED49B11AAD4AFC00EFE6FE /* MudTabPagesView.swift */,
+			);
+			path = "UIKit+CustomView";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,7 +250,25 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64AAF69E1A75DD68001366A7 /* MudFramework_Swift.h in Headers */,
+				64ED49C61AAD4BB400EFE6FE /* MudLocationManager.swift in Headers */,
+				64ED49C71AAD4BB400EFE6FE /* MudLocalString.swift in Headers */,
+				64ED49C81AAD4BB400EFE6FE /* MudManager.swift in Headers */,
+				64ED49C91AAD4BB400EFE6FE /* MudRequestBase.swift in Headers */,
+				64ED49CA1AAD4BB400EFE6FE /* MudRequestCenter.swift in Headers */,
+				64ED49CB1AAD4BB400EFE6FE /* NSError+extension.swift in Headers */,
+				64ED49CC1AAD4BB400EFE6FE /* NSLocale+Extension.swift in Headers */,
+				64ED49CD1AAD4BB400EFE6FE /* MudMacro.swift in Headers */,
+				64ED49CE1AAD4BB400EFE6FE /* MudNavigationBar.swift in Headers */,
+				64ED49CF1AAD4BB400EFE6FE /* MudNavigationController.swift in Headers */,
+				64ED49D01AAD4BB400EFE6FE /* MudTableViewController.swift in Headers */,
+				64ED49D11AAD4BB400EFE6FE /* MudViewController.swift in Headers */,
+				64ED49D21AAD4BB400EFE6FE /* UIBarButtonItem+extension.swift in Headers */,
+				64ED49D31AAD4BB400EFE6FE /* UIColor+Category.swift in Headers */,
+				64ED49D41AAD4BB400EFE6FE /* UIDevice+Extension.swift in Headers */,
+				64ED49D51AAD4BB400EFE6FE /* UIImage+Category.swift in Headers */,
+				64ED49D61AAD4BB400EFE6FE /* MudTabPageBar.swift in Headers */,
+				64ED49D71AAD4BB400EFE6FE /* MudTabPageBarItem.swift in Headers */,
+				64ED49D81AAD4BB400EFE6FE /* MudTabPagesView.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +334,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = 64AAF68E1A75DD68001366A7;
 			productRefGroup = 64AAF6991A75DD68001366A7 /* Products */;
@@ -214,6 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64ED49B21AAD4AFC00EFE6FE /* MudLocalization.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,8 +370,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64AAF6B71A75DE36001366A7 /* MudTableViewController.swift in Sources */,
-				64AAF6B91A75DE52001366A7 /* MudViewController.swift in Sources */,
+				64ED49C31AAD4AFC00EFE6FE /* MudTabPageBar.swift in Sources */,
+				64ED49BF1AAD4AFC00EFE6FE /* UIBarButtonItem+extension.swift in Sources */,
+				64ED49C41AAD4AFC00EFE6FE /* MudTabPageBarItem.swift in Sources */,
+				64ED49B51AAD4AFC00EFE6FE /* MudManager.swift in Sources */,
+				64ED49BD1AAD4AFC00EFE6FE /* MudTableViewController.swift in Sources */,
+				64ED49BA1AAD4AFC00EFE6FE /* MudMacro.swift in Sources */,
+				64ED49BE1AAD4AFC00EFE6FE /* MudViewController.swift in Sources */,
+				64ED49B61AAD4AFC00EFE6FE /* MudRequestBase.swift in Sources */,
+				64ED49BB1AAD4AFC00EFE6FE /* MudNavigationBar.swift in Sources */,
+				64ED49B71AAD4AFC00EFE6FE /* MudRequestCenter.swift in Sources */,
+				64ED49B31AAD4AFC00EFE6FE /* MudLocationManager.swift in Sources */,
+				64ED49C01AAD4AFC00EFE6FE /* UIColor+Category.swift in Sources */,
+				64ED49BC1AAD4AFC00EFE6FE /* MudNavigationController.swift in Sources */,
+				64ED49C21AAD4AFC00EFE6FE /* UIImage+Category.swift in Sources */,
+				64ED49B91AAD4AFC00EFE6FE /* NSLocale+Extension.swift in Sources */,
+				64ED49B41AAD4AFC00EFE6FE /* MudLocalString.swift in Sources */,
+				64ED49C11AAD4AFC00EFE6FE /* UIDevice+Extension.swift in Sources */,
+				64ED49B81AAD4AFC00EFE6FE /* NSError+extension.swift in Sources */,
+				64ED49C51AAD4AFC00EFE6FE /* MudTabPagesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +409,18 @@
 			targetProxy = 64AAF6A51A75DD68001366A7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		64ED49951AAD4AFC00EFE6FE /* MudLocalization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64ED49961AAD4AFC00EFE6FE /* en */,
+				64ED49981AAD4AFC00EFE6FE /* zh-Hans */,
+			);
+			name = MudLocalization.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		64AAF6AC1A75DD68001366A7 /* Debug */ = {
@@ -291,6 +459,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MACH_O_TYPE = mh_dylib;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -331,6 +500,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MACH_O_TYPE = mh_dylib;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -351,6 +521,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -368,6 +539,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 1;

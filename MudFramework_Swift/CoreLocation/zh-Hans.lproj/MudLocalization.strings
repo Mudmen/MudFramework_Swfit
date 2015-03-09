@@ -1,0 +1,22 @@
+/* 
+  MudLocalization.strings
+  Travel
+
+  Created by TimTiger on 2/6/15.
+  Copyright (c) 2015 Mudmen. All rights reserved.
+*/
+"RequestLocationUpdatingTitle"="提示";
+"RequestLocationUpdatingContent"="请在设置中允许软件使用您的位置";
+
+//Button Title
+"ButtonCancelTitle"="取消";
+"ButtonComfirmTitle"="确定";
+"ButtonSettingTitle"="设置";
+
+"ChinaName"="中国";
+
+"RequestResponseErrorDomain"="请求数据失败";
+"RequestResponseErrorContent"="未知原因";
+
+"RequestResponseInvalidDomain"="请求结果错误";
+"RequestResponseInvalidContent"="返回的数据无效";
