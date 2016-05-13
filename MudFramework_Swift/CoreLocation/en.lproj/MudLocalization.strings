@@ -20,3 +20,27 @@
 
 "RequestResponseInvalidDomain"="Response Error!";
 "RequestResponseInvalid"="Returns the results invalid";
+"RequestResponseEmptyContent"="Data empty";
+
+"CanLoadMore"="Load More"; //能加载更多
+"LoadingMore"="Loading...";//加载中
+"NoMore"="No More"; //没有更多了F
+
+"TimeHourBefore"="Hours ago";
+"TimeMinutesBefore"="Mins ago";
+"TimeAMomentAgo"="Just now";
+
+"SaveToPhone"="Save Photo";
+"SaveSuccess"="Saved to album";
+
+"RefreshDisplayName"="Tripsters";
+
+"TimeSeparatorYear"="-";
+"TimeSeparatorMonth"="-";
+"TimeSeparatorDay"="-";
+
+//Refresh
+"Release to refresh..."="Release to refresh...";
+"Pull down to refresh..."="Pull down to refresh...";
+"Loading..."="Loading...";
+"Last Updated: "="Last Updated: ";

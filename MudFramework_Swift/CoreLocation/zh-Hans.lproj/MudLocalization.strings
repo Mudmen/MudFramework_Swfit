@@ -20,3 +20,27 @@
 
 "RequestResponseInvalidDomain"="请求结果错误";
 "RequestResponseInvalidContent"="返回的数据无效";
+"RequestResponseEmptyContent"="没有数据";
+
+"CanLoadMore"="加载更多"; //能加载更多
+"LoadingMore"="正在加载...";//加载中
+"NoMore"="没有更多了"; //没有更多了F
+
+"TimeHourBefore"="小时前";
+"TimeMinutesBefore"="分钟前";
+"TimeAMomentAgo"="刚刚";
+
+"SaveToPhone"="保存到相册";
+"SaveSuccess"="已保存到相册";
+
+"RefreshDisplayName"="趣皮士";
+
+"TimeSeparatorYear"="年";
+"TimeSeparatorMonth"="月";
+"TimeSeparatorDay"="日";
+
+//Refresh
+"Release to refresh..."="松开刷新";
+"Pull down to refresh..."="下拉刷新";
+"Loading..."="加载中...";
+"Last Updated: "="上次刷新：";

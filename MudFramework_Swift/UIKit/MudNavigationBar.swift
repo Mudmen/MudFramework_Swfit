@@ -8,8 +8,8 @@
 
 import UIKit
 
-class MudNavigationBar: UINavigationBar {
-    override func layoutSubviews() {
+public class MudNavigationBar: UINavigationBar {
+    override public func layoutSubviews() {
         super.layoutSubviews()
 //        //2.方案二
 //        if (IOS_7_BELOW) {
@@ -40,30 +40,28 @@ class MudNavigationBar: UINavigationBar {
 //                self.topItem.leftBarButtonItems = leftItems;
 //            }
 //        }
-        
-        
-        //set navi item left edge and right edge
-        var rightBarButtonItemsCount = self.topItem?.rightBarButtonItems?.count
+        //方案1
+        let rightBarButtonItemsCount = self.topItem?.rightBarButtonItems?.count
         if rightBarButtonItemsCount > 0 {
-            var rightItems: NSMutableArray = NSMutableArray(array: self.topItem!.rightBarButtonItems!)
-            var item: UIBarButtonItem = rightItems.objectAtIndex(0) as UIBarButtonItem
+            var rightItems: [UIBarButtonItem] = self.topItem!.rightBarButtonItems!
+            let item: UIBarButtonItem = rightItems[0]
             if item.tag != 299 {
-                var rightSpace: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target:nil ,action:nil)
-                rightSpace.width = -10;
+                let rightSpace: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target:nil ,action:nil)
+                rightSpace.width = -5;
                 rightSpace.tag = 299;
-                rightItems.insertObject(rightSpace ,atIndex:0)
+                rightItems.insert(rightSpace, atIndex: 0)
                 self.topItem!.rightBarButtonItems = rightItems
             }
         }
-        var leftBarButtonItemsCount = self.topItem?.leftBarButtonItems?.count
+        let leftBarButtonItemsCount = self.topItem?.leftBarButtonItems?.count
         if leftBarButtonItemsCount > 0 {
-            var leftItems: NSMutableArray = NSMutableArray(array: self.topItem!.leftBarButtonItems!)
-            var item: UIBarButtonItem = leftItems.objectAtIndex(0) as UIBarButtonItem
+            var leftItems: [UIBarButtonItem] = self.topItem!.leftBarButtonItems!
+            let item: UIBarButtonItem = leftItems[0]
             if item.tag != 300 {
-                var leftSpace: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target:nil ,action:nil)
-                leftSpace.width = -10;
+                let leftSpace: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target:nil ,action:nil)
+                leftSpace.width = -5;
                 leftSpace.tag = 300;
-                leftItems.insertObject(leftSpace ,atIndex:0)
+                leftItems.insert(leftSpace, atIndex: 0)
                 self.topItem!.leftBarButtonItems = leftItems
             }
         }

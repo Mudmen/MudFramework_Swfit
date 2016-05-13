@@ -15,11 +15,9 @@ class MudRequestCenter: MudRequestBase {
             static var instance: MudRequestCenter?
             static var token: dispatch_once_t = 0
         }
-        
         dispatch_once(&Static.token) {
             Static.instance = MudRequestCenter()
         }
-        
         return Static.instance!
     }
 }

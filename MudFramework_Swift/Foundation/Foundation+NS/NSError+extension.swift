@@ -15,9 +15,9 @@ extension NSError {
     * localizedDes : error describtion
     * code : error code
     **/
-    class func errorWithDomain(domain: String, localizedDescription localizedDes: String, errorCode code: Int)->NSError {
-        var userinfo: NSDictionary = NSDictionary(objectsAndKeys:localizedDes,NSLocalizedDescriptionKey)
-        var error: NSError = NSError(domain: domain, code: code, userInfo: userinfo)
+    class func getErrorWithDomain(domain: String, localizedDescription localizedDes: String, errorCode code: Int)->NSError {
+        let userinfo: Dictionary =  [NSLocalizedDescriptionKey: localizedDes]
+        let error: NSError = NSError(domain: domain, code: code, userInfo: userinfo)
         return error
     }
 }

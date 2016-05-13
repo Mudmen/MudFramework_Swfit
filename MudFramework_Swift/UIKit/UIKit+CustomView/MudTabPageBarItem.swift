@@ -27,19 +27,12 @@ class MudTabPageBarItem: UIButton {
     override init(frame: CGRect) {
         self.indexView = UIView()
         super.init(frame: frame)
-
-    }
-    
-    override init() {
-        self.indexView = UIView()
-        super.init()
         self.addSubview(indexView)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.backgroundColor = UIColor.clearColor()
-        self.indexView.frame = CGRectMake(0, self.bounds.size.height-self.indexViewHeight, self.bounds.size.width,self.indexViewHeight);
+        self.indexView.frame = CGRectMake(5, self.bounds.size.height-self.indexViewHeight, self.bounds.size.width-10,self.indexViewHeight);
         self.indexView.backgroundColor = self.indexViewColor;
         if self.indexViewHidden {
             self.indexView.hidden = true;
@@ -48,7 +41,7 @@ class MudTabPageBarItem: UIButton {
         }
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 

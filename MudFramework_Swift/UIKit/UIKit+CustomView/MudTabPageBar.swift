@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MudTabPageBarDelegate: NSObjectProtocol  {
-    func didSelectItem(item: MudTabPageBarItem, atIndex index: NSInteger)
+    func didSelectItem(item: MudTabPageBarItem?, atIndex index: NSInteger)
 }
 
 class MudTabPageBar: UIView{
@@ -18,7 +18,7 @@ class MudTabPageBar: UIView{
    
     var indexViewHidden: Bool = false
     var indexViewColor: UIColor = UIColor.grayColor()
-    var items: NSArray? {
+    var items: [MudTabPageBarItem]? {
         willSet {
             self.removeViewsFramArray(self.items)
             self.items = nil
@@ -27,17 +27,17 @@ class MudTabPageBar: UIView{
             self.addViewsFromArray(self.items)
             if self.items != nil && self.items!.count > 0 {
                 for item in self.items! {
-                    (item as MudTabPageBarItem).addTarget(self, action:"onItemAction:", forControlEvents: UIControlEvents.TouchUpInside)
+                    item.addTarget(self, action:"onItemAction:", forControlEvents: UIControlEvents.TouchUpInside)
                 }
-                self.setSelectItem(self.items!.firstObject as MudTabPageBarItem)
+                self.setSelectItem(self.items![0])
             }
         }
     }
     var selectIndex: NSInteger = 0 {
         didSet {
             //update all item status
-            for var i = 0; i < self.items!.count; ++i {
-                var tmpItem: MudTabPageBarItem = self.items!.objectAtIndex(i) as MudTabPageBarItem
+            for var i = 0; i < self.items!.count; i++ {
+                let tmpItem: MudTabPageBarItem = self.items![i]
                 if self.selectIndex == i {
                     tmpItem.selected = true
                 } else {
@@ -55,17 +55,18 @@ class MudTabPageBar: UIView{
         super.init(frame: frame)
     }
     
-    // MARK: - layout
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        if self.items != nil && self.items?.count > 0 {
-            let width = self.bounds.size.width/CGFloat(self.items!.count)
-            for var i = 0; i < self.items!.count; ++i {
-                var item: MudTabPageBarItem = self.items!.objectAtIndex(i) as MudTabPageBarItem
-                item.frame = CGRectMake(CGFloat(i)*width,0, width,self.bounds.size.height);
-            }
-        }
-    }
+    // MARK: - layout  
+    //remove  item width auto set
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        if self.items != nil && self.items?.count > 0 {
+//            let width = self.bounds.size.width/CGFloat(self.items!.count)
+//            for var i = 0; i < self.items!.count; ++i {
+//                var item: MudTabPageBarItem = self.items!.objectAtIndex(i) as MudTabPageBarItem
+//                item.frame = CGRectMake(CGFloat(i)*width,0, width,self.bounds.size.height);
+//            }
+//        }
+//    }
     
     //MARK: - Private func 
     // remove
@@ -74,7 +75,7 @@ class MudTabPageBar: UIView{
             return
         }
         for view in views! {
-            (view as UIView).removeFromSuperview()
+            (view as! UIView).removeFromSuperview()
         }
     }
     
@@ -83,13 +84,13 @@ class MudTabPageBar: UIView{
             return
         }
         for view in views! {
-            self.addSubview((view as MudTabPageBarItem))
+            self.addSubview((view as! MudTabPageBarItem))
         }
     }
     
     private func setSelectItem(item: MudTabPageBarItem!) {
         for var i = 0; i < self.items!.count; i++ {
-            var tmpitem: MudTabPageBarItem = self.items!.objectAtIndex(i) as MudTabPageBarItem;
+            let tmpitem: MudTabPageBarItem = self.items![i]
             if item == tmpitem {
                 self.selectIndex = i;
                 tmpitem.selected = true
@@ -107,8 +108,17 @@ class MudTabPageBar: UIView{
         }
     }
     
+    //MARK: - Public Api
+    func setSelectItemWithIndex(index: Int) {
+        self.selectIndex = index
+        let sender = self.items![index]
+        if (self.delegate != nil && self.delegate!.respondsToSelector("didSelectItem:atIndex:")) {
+            self.delegate!.didSelectItem(sender, atIndex: self.selectIndex)
+        }
+    }
+    
     // MARK: - Error remind
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

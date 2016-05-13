@@ -9,11 +9,10 @@
 import Foundation
 
 extension NSLocale {
-    //get current system language
     class func systemLanguage()->String {
         var lanArray: Array =  NSLocale.preferredLanguages()
-        var language: String = lanArray[0] as String
-        if (language == "zh-Hans" || language == "zh-Hant") {
+        var language: String = lanArray[0] 
+        if language == "zh-Hans" || language == "zh-Hant" || language == "zh-HK" || language == "zh-TW" {
             language = "zh_CN"
         } else {
             language = "en_US"
@@ -21,14 +20,13 @@ extension NSLocale {
         return language
     }
     
-    //current language is english or not
     class func isEnglish()->Bool {
         var lanArray: Array =  NSLocale.preferredLanguages()
-        var language: String = lanArray[0] as String
-        if (language == "zh-Hans" || language == "zh-Hant") {
-            return false
-        } else {
+        let language: String = lanArray[0] 
+        if (language == "en" || language == "en-GB" || language == "en-US") {
             return true
+        } else {
+            return false
         }
     }
 }

@@ -9,87 +9,118 @@
 import UIKit
 import CoreLocation
 
+let UpdatingLocationGetUserLocationSuccess = "UpdatingLocationGetUserLocationSuccess"
+let UpdatingLocationGetUserLocationNotAllowed = "UpdatingLocationGetUserLocationNotAllowed"
+let UpdatingLocationGetUserLocationFailed = "UpdatingLocationGetUserLocationFailed"
+
+//App Mode
+enum UpdatingLocationMode : UInt {
+    case getUserLocation        //获取用户位置
+}
+
+private let shareInstance = MudLocationManager()
+
 class MudLocationManager: MudManager ,CLLocationManagerDelegate,UIAlertViewDelegate {
     
-    var locationManager: CLLocationManager?
-    var geocoder: CLGeocoder?
+    lazy private var locationManager: CLLocationManager! = {
+        let tlocationManager = CLLocationManager()
+        tlocationManager.requestWhenInUseAuthorization()
+        tlocationManager.desiredAccuracy = kCLLocationAccuracyBest
+        tlocationManager.activityType = CLActivityType.Fitness
+        return tlocationManager
+    }()
     
-    //share instance
-    class var defaultManager: MudLocationManager {
-        struct Static {
-            static var instance: MudLocationManager?
-            static var token: dispatch_once_t = 0
+   lazy var geocoder: CLGeocoder! = {
+        let tgeocoder = CLGeocoder()
+        return tgeocoder
+    }()
+    
+    private var updatingMode = UpdatingLocationMode.getUserLocation
+    
+    var currentPlace: CLPlacemark? {
+        didSet {
+            if currentPlace != nil && self.updatingMode == .getUserLocation {
+                NSNotificationCenter.defaultCenter().postNotificationName(UpdatingLocationGetUserLocationSuccess, object: nil)
+            } else if currentPlace == nil {
+                NSNotificationCenter.defaultCenter().postNotificationName(UpdatingLocationGetUserLocationFailed, object: nil)
+            }
         }
-        dispatch_once(&Static.token) {
-            Static.instance = MudLocationManager()
-        }
-        return Static.instance!
     }
     
-    //MARK: - Public API
-    func startUpdatingLocation() {
-        self.setmanager()
+    var currentLocation: CLLocation? {
+        didSet {
+            
+        }
+    }
+    
+    //share instance
+    class var defaultManager : MudLocationManager {
+        return shareInstance
+    }
+
+    //MARK: Public API
+    func startUpdatingLocationWithMode(mode: UpdatingLocationMode) {
+        self.updatingMode = mode
+        
+        if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied {
+            NSNotificationCenter.defaultCenter().postNotificationName(UpdatingLocationGetUserLocationNotAllowed, object: nil)
+            return
+        }
+        
         if CLLocationManager.locationServicesEnabled() {
-            locationManager?.startUpdatingLocation()
+            self.locationManager.delegate = self
+            self.locationManager.startUpdatingLocation()
         } else {
-            var alertView: UIAlertView = UIAlertView(title: MudLocalString.stringForKey("RequestLocationUpdatingTitle", tableName: "MudLocalization"), message: MudLocalString.stringForKey("RequestLocationUpdatingContent", tableName: "MudLocalization"), delegate: nil, cancelButtonTitle: MudLocalString.stringForKey("ButtonComfirmTitle", tableName: "MudLocalization"))
-            alertView.show()
+            //The device does not support positioning
         }
     }
     
     func stopUpdateingLocation() {
-        locationManager?.stopUpdatingLocation()
+        self.locationManager.stopUpdatingLocation()
     }
     
-    //MARK: - Private API
-    private func setmanager() {
-        if (locationManager == nil) {
-            geocoder = CLGeocoder()
-            locationManager = CLLocationManager()
-            locationManager?.delegate = self;
-            if (CurrentDeviceSystemVersion >= 8.0) {
-                //                locationManager?.requestWhenInUseAuthorization()
-                locationManager?.requestAlwaysAuthorization()
-            }
-            locationManager?.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-            locationManager?.activityType = CLActivityType.Fitness
-        }
-    }
-    
-    //MARK: - Delegate * self can't use it
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        geocoder?.reverseGeocodeLocation(locations[0] as CLLocation, completionHandler: { (resultArray, error) -> Void in
-            if resultArray.count > 0 {
-                var mark: CLPlacemark = resultArray[0] as CLPlacemark
-                if (mark.country != nil && mark.country == MudLocalString.stringForKey("ChinaName", tableName: "MudLocalization")) {
-                    NSLog("123")
-                }
-            }
-        })
-    }
-    
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status == CLAuthorizationStatus.Authorized || status == CLAuthorizationStatus.AuthorizedWhenInUse {
-            self.startUpdatingLocation()
-        } else {
-            var alertView: UIAlertView = UIAlertView(title: MudLocalString.stringForKey("RequestLocationUpdatingTitle", tableName: "MudLocalization"), message: MudLocalString.stringForKey("RequestLocationUpdatingContent", tableName: "MudLocalization"), delegate: nil, cancelButtonTitle: MudLocalString.stringForKey("ButtonComfirmTitle", tableName: "MudLocalization"))
-            alertView.show()
-        }
-    }
-    
-    func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
-        geocoder?.reverseGeocodeLocation(newLocation, completionHandler: { (resultArray, error) -> Void in
-            if resultArray.count > 0 {
-                var mark: CLPlacemark = resultArray[0] as CLPlacemark
-                if (mark.country != nil && mark.country == MudLocalString.stringForKey("ChinaName", tableName: "MudLocalization")) {
-                    NSLog("123")
-                }
-            }
-        })
-    }
-    
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+    //MARK: - Delegate
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
+        if locations.count < 1 {
+            return
+        }
+        
+        self.geocoder.reverseGeocodeLocation(locations.last! , completionHandler: { (resultArray, error) -> Void in
+            if resultArray != nil && resultArray!.count > 0 {
+                let mark: CLPlacemark = resultArray![0]
+                if (mark.country != nil && mark.country == MudLocalString.stringForKey("ChinaName", tableName: "MudLocalization")) {
+                }
+                self.currentPlace = mark
+            } else if error != nil {
+                self.currentPlace = nil
+            }
+            self.currentLocation = locations.last
+        })
+        if self.updatingMode == .getUserLocation {
+            self.stopUpdateingLocation()
+        } else {
+            //custom actions when in other mode
+            self.stopUpdateingLocation()
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
+        self.geocoder.reverseGeocodeLocation(newLocation, completionHandler: { (resultArray, error) -> Void in
+            if resultArray != nil && resultArray!.count > 0 {
+                let mark: CLPlacemark = resultArray![0] 
+                if (mark.country != nil && mark.country == MudLocalString.stringForKey("ChinaName", tableName: "MudLocalization")) {
+                }
+            }
+        })
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        self.stopUpdateingLocation()
     }
 
 }

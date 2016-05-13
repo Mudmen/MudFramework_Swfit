@@ -11,12 +11,10 @@ import UIKit
 //let void(^RequestSuccessBlock)();
 //let void(^RequestFailedBlock)(NSError *error);
 
-class MudManager: NSObject {
+@objc class MudManager: NSObject {
 
     //demo request 
     func requestSuccess(success: ()->Void,failed: ()->Void) {
         
     }
-
-    
 }

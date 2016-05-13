@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum RequestMethod : Int {
     case GET = 1   //request
@@ -14,10 +15,12 @@ enum RequestMethod : Int {
     case PUT
 }
 
+private let currentVersion: String = UIApplication.formatCurrentVersion()
+
 class MudRequestParam : NSObject {
 
-    var requestUrl: NSString?
-    var callbackPrefix: NSString?
+    var requestUrl: String?
+    var callbackPrefix: String?
     var params: NSMutableDictionary?
     var additionalParams: NSDictionary?
     var retryTimes: Int = 1
@@ -25,10 +28,27 @@ class MudRequestParam : NSObject {
     var timeoutInterval: Int = 20
     var tag: String = "default"
     var method: RequestMethod = RequestMethod.GET
+    var userinfo: [NSObject: AnyObject]?
 
-    class func paramWithURLSting(requestUrl: NSString, andParams params: NSDictionary)->MudRequestParam {
-        var reqParam:MudRequestParam = MudRequestParam()
-        reqParam.params = NSMutableDictionary(dictionary: params)
+    class func paramWithURLSting(requestUrl: String, andParams params: NSDictionary)->MudRequestParam {
+        let reqParam:MudRequestParam = MudRequestParam()
+        if params.count < 1 {
+            reqParam.params = NSMutableDictionary(capacity: 0)
+        } else {
+            reqParam.params = NSMutableDictionary(dictionary: params)
+        }
+        if (reqParam.params?.objectForKey("platform") == nil) {
+            reqParam.params?.setValue("iphone", forKey: "platform")
+        }
+        if (reqParam.params?.objectForKey("version") == nil) {
+            reqParam.params?.setValue(currentVersion, forKey: "version")
+        }
+        if (reqParam.params?.objectForKey("device_id") == nil) {
+            reqParam.params?.setValue(UIDevice.ADUDID(), forKey: "device_id")
+        }
+        if (reqParam.params?.objectForKey("language") == nil) {
+            reqParam.params?.setValue(NSLocale.systemLanguage(), forKey: "language")
+        }
         reqParam.requestUrl = requestUrl;
         reqParam.method = RequestMethod.GET;
         reqParam.retryTimes = 0;
@@ -37,32 +57,49 @@ class MudRequestParam : NSObject {
         return reqParam;
     }
 
-    class func paramWithURLSting(requestUrl: NSString, andParams params: NSDictionary ,withPrefix prefix: NSString)->MudRequestParam {
-        var reqParam:MudRequestParam = MudRequestParam.paramWithURLSting(requestUrl,andParams: params)
-        reqParam.callbackPrefix = prefix;
+    class func generalParamWithURLSting(requestUrl: String, andParams params: NSDictionary ,withPrefix prefix: String)->MudRequestParam {
+        let reqParam:MudRequestParam = MudRequestParam()
+        reqParam.params = NSMutableDictionary(dictionary: params)
+        reqParam.requestUrl = requestUrl;
+        reqParam.method = RequestMethod.GET;
+        reqParam.retryTimes = 0;
+        reqParam.timeoutInterval = 20;
+        reqParam.retryInterval = 2;
+        reqParam.callbackPrefix = prefix
+        return reqParam;
+    }
+    
+    class func paramWithURLSting(requestUrl: String, andParams params: NSDictionary ,withPrefix prefix: String)->MudRequestParam {
+        let reqParam:MudRequestParam = MudRequestParam.paramWithURLSting(requestUrl,andParams: params)
+        reqParam.callbackPrefix = prefix
         return reqParam;
     }
 
-    class func paramWithURLSting(requestUrl: NSString, andParams params: NSDictionary ,additionParams otherPararms: NSDictionary,withPrefix prefix: NSString)->MudRequestParam {
-        var reqParam:MudRequestParam = MudRequestParam.paramWithURLSting(requestUrl,andParams: params,withPrefix: prefix)
+    class func paramWithURLSting(requestUrl: String, andParams params: NSDictionary ,userinfo: [NSObject: AnyObject],withPrefix prefix: String)->MudRequestParam {
+        let reqParam:MudRequestParam = MudRequestParam.paramWithURLSting(requestUrl,andParams: params)
+        reqParam.userinfo = userinfo
+        reqParam.callbackPrefix = prefix
+        return reqParam;
+    }
+    
+    class func paramWithURLSting(requestUrl: String, andParams params: NSDictionary ,additionParams otherPararms: NSDictionary,withPrefix prefix: String)->MudRequestParam {
+        let reqParam:MudRequestParam = MudRequestParam.paramWithURLSting(requestUrl,andParams: params,withPrefix: prefix)
         reqParam.additionalParams = otherPararms;
         return reqParam
     }
-
 }
 
 class ResponderObject: NSObject
 {
-    weak var responder: AnyObject!
+    weak var responder: AnyObject?
 }
 
 class MudRequestBase : NSObject
 {
-    var responders: NSMutableArray
+    var responders: NSMutableArray = NSMutableArray(capacity: 0)
     var baseURL:NSURL?
     
     override init() {
-        self.responders = NSMutableArray(capacity: 0)
         super.init()
     }
     
@@ -72,13 +109,14 @@ class MudRequestBase : NSObject
         dispatch_sync(lockQueue) {
             // code
             for obj in self.responders {
-                if (obj as ResponderObject).responder === responder {
+                if (obj as! ResponderObject).responder === responder {
                     return;
                 }
             }
-            var responderObj:ResponderObject = ResponderObject()
-            responderObj.responder = responder;
-            self.responders.addObject(responderObj)
+            var responderObj:ResponderObject?
+            responderObj = ResponderObject()
+            responderObj!.responder = responder;
+            self.responders.addObject(responderObj!)
         }
     }
     
@@ -86,7 +124,7 @@ class MudRequestBase : NSObject
         let lockQueue = dispatch_queue_create("LockQueue", DISPATCH_QUEUE_SERIAL)
         dispatch_sync(lockQueue) {
             for obj in self.responders {
-                if (obj as ResponderObject).responder === responder {
+                if (obj as! ResponderObject).responder === responder {
                     self.responders.removeObject(obj)
                     break;
                 }
@@ -101,6 +139,7 @@ class MudRequestBase : NSObject
         }
     }
     //TODO: - 接着写网络
+    
 }
 
 

@@ -10,22 +10,25 @@ import UIKit
 
 extension UIBarButtonItem {
     
-    //get item with image
     class func itemWithImage(image: UIImage?, target: AnyObject,action: Selector) ->UIBarButtonItem {
-        var button: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+        let button: UIButton = UIButton(type: UIButtonType.Custom)
         button.frame = CGRectMake(0, 0, 24, 44);
         button.setImage(image ,forState:UIControlState.Normal)
         button.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
         button.autoresizingMask = UIViewAutoresizing.FlexibleTopMargin;
-        var item: UIBarButtonItem = UIBarButtonItem(customView: button)
+        let item: UIBarButtonItem = UIBarButtonItem(customView: button)
         return item;
     }
     
-    //get item with string
-    class func itemWithTitle(title: NSString, target: AnyObject ,action: Selector)->UIBarButtonItem {
-        var button:UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+    class func itemWithTitle(title: String, target: AnyObject ,action: Selector,titleColor: UIColor? = nil,textAlignment: UIControlContentHorizontalAlignment = UIControlContentHorizontalAlignment.Left)->UIBarButtonItem {
+        let button:UIButton = UIButton(type: UIButtonType.Custom)
         button.backgroundColor = UIColor.clearColor()
-        button.setTitleColor(UIColor.whiteColor(), forState:UIControlState.Normal)
+        button.titleLabel?.font = UIFont.systemFontOfSize(17)
+        if titleColor != nil {
+            button.setTitleColor(titleColor!, forState:UIControlState.Normal)
+        } else {
+            button.setTitleColor(UIColor.colorWithHex(0x464f54), forState:UIControlState.Normal)
+        }
         var redf: CGFloat = 0.0
         var greenf: CGFloat = 0.0
         var bluef: CGFloat = 0.0
@@ -35,24 +38,35 @@ extension UIBarButtonItem {
         greenf += 0.1;
         bluef += 0.1;
         button.setTitleColor(UIColor(red: redf,green: greenf,blue: bluef,alpha: alphaf), forState:UIControlState.Highlighted)
-        button.frame = CGRectMake(0, 0,60, 44);
+        let height: CGFloat = CGFloat(title.length()*20) > 120 ? 120 : CGFloat(title.length()*20)
+        button.frame = CGRectMake(0, 0,height, 44);
+        button.contentHorizontalAlignment = textAlignment
         button.setTitle(title,forState:UIControlState.Normal)
         button.setTitle(title,forState:UIControlState.Highlighted)
         button.addTarget(target, action: action,forControlEvents: UIControlEvents.TouchUpInside)
-        var item: UIBarButtonItem = UIBarButtonItem(customView: button)
+        let item: UIBarButtonItem = UIBarButtonItem(customView: button)
         item.style = UIBarButtonItemStyle.Plain
         return item;
     }
     
-    //get item with custom view
     class func itemWithCustomView(view: UIView)->UIBarButtonItem {
-        var item: UIBarButtonItem = UIBarButtonItem(customView: view)
+        let item: UIBarButtonItem = UIBarButtonItem(customView: view)
+        return item;
+    }
+    
+    class func hiddenItem()->UIBarButtonItem {
+        let button: UIButton = UIButton(type: UIButtonType.Custom)
+        button.frame = CGRectMake(0, 0, 24, 44);
+        button.setImage(UIImage.imageWithColor(UIColor.clearColor(), andSize: CGSizeMake(24, 44)) ,forState:UIControlState.Normal)
+        button.setImage(UIImage.imageWithColor(UIColor.clearColor(), andSize: CGSizeMake(24, 44)) ,forState:UIControlState.Selected)
+        button.setImage(UIImage.imageWithColor(UIColor.clearColor(), andSize: CGSizeMake(24, 44)) ,forState:UIControlState.Highlighted)
+        button.autoresizingMask = UIViewAutoresizing.FlexibleTopMargin
+        let item: UIBarButtonItem = UIBarButtonItem(customView: button)
         return item;
     }
 
-    //set item title color
     func setTitleColor(color: UIColor, forState state: UIControlState) {
-        var button: UIButton = self.customView as UIButton
+        let button: UIButton = self.customView as! UIButton
         button.setTitleColor(color, forState:UIControlState.Normal)
         if state == UIControlState.Normal {
             var redf: CGFloat = 0.0
