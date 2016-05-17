@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		64AAF6A41A75DD68001366A7 /* MudFramework_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AAF6981A75DD68001366A7 /* MudFramework_Swift.framework */; };
+		64AAF6A41A75DD68001366A7 /* MudFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AAF6981A75DD68001366A7 /* MudFramework.framework */; };
 		64AAF6AB1A75DD68001366A7 /* MudFramework_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AAF6AA1A75DD68001366A7 /* MudFramework_SwiftTests.swift */; };
 		AE5416301CE5815E00570E23 /* MudLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE5415D01CE5815E00570E23 /* MudLocalization.strings */; };
 		AE5416311CE5815E00570E23 /* MudLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415D31CE5815E00570E23 /* MudLocationManager.swift */; };
@@ -28,7 +28,6 @@
 		AE5416401CE5815E00570E23 /* Int+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415E71CE5815E00570E23 /* Int+Convert.swift */; };
 		AE5416411CE5815E00570E23 /* Int+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415E81CE5815E00570E23 /* Int+extension.swift */; };
 		AE5416421CE5815E00570E23 /* NSDate+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415E91CE5815E00570E23 /* NSDate+Extention.swift */; };
-		AE5416431CE5815E00570E23 /* NSDictionary+Category.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5415EA1CE5815E00570E23 /* NSDictionary+Category.h */; };
 		AE5416451CE5815E00570E23 /* NSError+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415EC1CE5815E00570E23 /* NSError+extension.swift */; };
 		AE5416461CE5815E00570E23 /* NSJSONSerialization+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415ED1CE5815E00570E23 /* NSJSONSerialization+Category.swift */; };
 		AE5416471CE5815E00570E23 /* NSLocale+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415EE1CE5815E00570E23 /* NSLocale+Extension.swift */; };
@@ -37,13 +36,6 @@
 		AE54164A1CE5815E00570E23 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE5415F21CE5815E00570E23 /* Info.plist */; };
 		AE54164B1CE5815E00570E23 /* MudMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415F41CE5815E00570E23 /* MudMacro.swift */; };
 		AE54164C1CE5815E00570E23 /* MudResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AE5415F51CE5815E00570E23 /* MudResource.bundle */; };
-		AE54164D1CE5815E00570E23 /* NSDate+Category.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5415F81CE5815E00570E23 /* NSDate+Category.h */; };
-		AE54164F1CE5815E00570E23 /* NSDateFormatter+Category.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5415FA1CE5815E00570E23 /* NSDateFormatter+Category.h */; };
-		AE5416511CE5815E00570E23 /* NSString+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5415FC1CE5815E00570E23 /* NSString+Utils.h */; };
-		AE5416531CE5815E00570E23 /* NSString+Valid.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5415FE1CE5815E00570E23 /* NSString+Valid.h */; };
-		AE5416551CE5815E00570E23 /* UIResponder+Router.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5416001CE5815E00570E23 /* UIResponder+Router.h */; };
-		AE5416571CE5815E00570E23 /* UIViewController+DismissKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5416021CE5815E00570E23 /* UIViewController+DismissKeyboard.h */; };
-		AE5416591CE5815E00570E23 /* UIViewController+HUD.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5416041CE5815E00570E23 /* UIViewController+HUD.h */; };
 		AE54165B1CE5815E00570E23 /* MudFullScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416061CE5815E00570E23 /* MudFullScreenViewController.swift */; };
 		AE54165C1CE5815E00570E23 /* MudLeftImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416071CE5815E00570E23 /* MudLeftImageView.swift */; };
 		AE54165D1CE5815E00570E23 /* MudNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416081CE5815E00570E23 /* MudNavigationBar.swift */; };
@@ -83,6 +75,7 @@
 		AE54167F1CE5815E00570E23 /* MudTabPagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54162D1CE5815E00570E23 /* MudTabPagesView.swift */; };
 		AE5416801CE5815E00570E23 /* MudTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54162E1CE5815E00570E23 /* MudTextView.swift */; };
 		AE5416811CE5815E00570E23 /* MudVerticalLayoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54162F1CE5815E00570E23 /* MudVerticalLayoutButton.swift */; };
+		AE5416AC1CE5AA4800570E23 /* MudLocationManager.swift in Headers */ = {isa = PBXBuildFile; fileRef = AE5415D31CE5815E00570E23 /* MudLocationManager.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,7 +89,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		64AAF6981A75DD68001366A7 /* MudFramework_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MudFramework_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64AAF6981A75DD68001366A7 /* MudFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MudFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64AAF6A31A75DD68001366A7 /* MudFramework_SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MudFramework_SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64AAF6A91A75DD68001366A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64AAF6AA1A75DD68001366A7 /* MudFramework_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MudFramework_SwiftTests.swift; sourceTree = "<group>"; };
@@ -121,7 +114,6 @@
 		AE5415E71CE5815E00570E23 /* Int+Convert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Convert.swift"; sourceTree = "<group>"; };
 		AE5415E81CE5815E00570E23 /* Int+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+extension.swift"; sourceTree = "<group>"; };
 		AE5415E91CE5815E00570E23 /* NSDate+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extention.swift"; sourceTree = "<group>"; };
-		AE5415EA1CE5815E00570E23 /* NSDictionary+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Category.h"; sourceTree = "<group>"; };
 		AE5415EC1CE5815E00570E23 /* NSError+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+extension.swift"; sourceTree = "<group>"; };
 		AE5415ED1CE5815E00570E23 /* NSJSONSerialization+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSJSONSerialization+Category.swift"; sourceTree = "<group>"; };
 		AE5415EE1CE5815E00570E23 /* NSLocale+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLocale+Extension.swift"; sourceTree = "<group>"; };
@@ -130,13 +122,6 @@
 		AE5415F21CE5815E00570E23 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE5415F41CE5815E00570E23 /* MudMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudMacro.swift; sourceTree = "<group>"; };
 		AE5415F51CE5815E00570E23 /* MudResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MudResource.bundle; sourceTree = "<group>"; };
-		AE5415F81CE5815E00570E23 /* NSDate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Category.h"; sourceTree = "<group>"; };
-		AE5415FA1CE5815E00570E23 /* NSDateFormatter+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+Category.h"; sourceTree = "<group>"; };
-		AE5415FC1CE5815E00570E23 /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
-		AE5415FE1CE5815E00570E23 /* NSString+Valid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Valid.h"; sourceTree = "<group>"; };
-		AE5416001CE5815E00570E23 /* UIResponder+Router.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+Router.h"; sourceTree = "<group>"; };
-		AE5416021CE5815E00570E23 /* UIViewController+DismissKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DismissKeyboard.h"; sourceTree = "<group>"; };
-		AE5416041CE5815E00570E23 /* UIViewController+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HUD.h"; sourceTree = "<group>"; };
 		AE5416061CE5815E00570E23 /* MudFullScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudFullScreenViewController.swift; sourceTree = "<group>"; };
 		AE5416071CE5815E00570E23 /* MudLeftImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudLeftImageView.swift; sourceTree = "<group>"; };
 		AE5416081CE5815E00570E23 /* MudNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudNavigationBar.swift; sourceTree = "<group>"; };
@@ -190,7 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64AAF6A41A75DD68001366A7 /* MudFramework_Swift.framework in Frameworks */,
+				64AAF6A41A75DD68001366A7 /* MudFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +194,7 @@
 		64AAF6991A75DD68001366A7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				64AAF6981A75DD68001366A7 /* MudFramework_Swift.framework */,
+				64AAF6981A75DD68001366A7 /* MudFramework.framework */,
 				64AAF6A31A75DD68001366A7 /* MudFramework_SwiftTests.xctest */,
 			);
 			name = Products;
@@ -299,7 +284,6 @@
 				AE5415E71CE5815E00570E23 /* Int+Convert.swift */,
 				AE5415E81CE5815E00570E23 /* Int+extension.swift */,
 				AE5415E91CE5815E00570E23 /* NSDate+Extention.swift */,
-				AE5415EA1CE5815E00570E23 /* NSDictionary+Category.h */,
 				AE5415EC1CE5815E00570E23 /* NSError+extension.swift */,
 				AE5415ED1CE5815E00570E23 /* NSJSONSerialization+Category.swift */,
 				AE5415EE1CE5815E00570E23 /* NSLocale+Extension.swift */,
@@ -346,13 +330,6 @@
 		AE5415F71CE5815E00570E23 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				AE5415F81CE5815E00570E23 /* NSDate+Category.h */,
-				AE5415FA1CE5815E00570E23 /* NSDateFormatter+Category.h */,
-				AE5415FC1CE5815E00570E23 /* NSString+Utils.h */,
-				AE5415FE1CE5815E00570E23 /* NSString+Valid.h */,
-				AE5416001CE5815E00570E23 /* UIResponder+Router.h */,
-				AE5416021CE5815E00570E23 /* UIViewController+DismissKeyboard.h */,
-				AE5416041CE5815E00570E23 /* UIViewController+HUD.h */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -416,14 +393,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE54164F1CE5815E00570E23 /* NSDateFormatter+Category.h in Headers */,
-				AE5416431CE5815E00570E23 /* NSDictionary+Category.h in Headers */,
-				AE5416511CE5815E00570E23 /* NSString+Utils.h in Headers */,
-				AE54164D1CE5815E00570E23 /* NSDate+Category.h in Headers */,
-				AE5416571CE5815E00570E23 /* UIViewController+DismissKeyboard.h in Headers */,
-				AE5416591CE5815E00570E23 /* UIViewController+HUD.h in Headers */,
-				AE5416551CE5815E00570E23 /* UIResponder+Router.h in Headers */,
-				AE5416531CE5815E00570E23 /* NSString+Valid.h in Headers */,
+				AE5416AC1CE5AA4800570E23 /* MudLocationManager.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +415,7 @@
 			);
 			name = MudFramework_Swift;
 			productName = MudFramework_Swift;
-			productReference = 64AAF6981A75DD68001366A7 /* MudFramework_Swift.framework */;
+			productReference = 64AAF6981A75DD68001366A7 /* MudFramework.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		64AAF6A21A75DD68001366A7 /* MudFramework_SwiftTests */ = {
@@ -726,7 +696,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = mh_dylib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MudFramework;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -744,7 +714,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = mh_dylib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MudFramework;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
