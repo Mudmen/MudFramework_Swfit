@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MudFullScreenViewController: MudViewController {
+public class MudFullScreenViewController: MudViewController {
     
     var topItem: UINavigationItem!
     var topTitle: String! {
@@ -30,7 +30,7 @@ class MudFullScreenViewController: MudViewController {
     var shouldUpdateNavigationBar = true
     var shouldUpdateWhenAppear = false
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(self.topBar)
     }
@@ -42,7 +42,7 @@ class MudFullScreenViewController: MudViewController {
         self.topBar.navigationBar.pushNavigationItem(self.topItem, animated: true)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override public func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if self.shouldUpdateNavigationBar {
             self.navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -51,13 +51,13 @@ class MudFullScreenViewController: MudViewController {
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override public func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.shouldUpdateWhenAppear = false
         self.shouldUpdateNavigationBar = true
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override public func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         if self.shouldUpdateNavigationBar {
             self.navigationController?.setNavigationBarHidden(false, animated: animated)

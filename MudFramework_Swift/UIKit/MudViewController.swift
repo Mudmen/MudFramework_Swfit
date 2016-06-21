@@ -9,14 +9,14 @@
 import UIKit
 import Dispatch
 
-class MudViewController: UIViewController,UINavigationControllerDelegate {
+public class MudViewController: UIViewController,UINavigationControllerDelegate {
     
     weak var dataDelegate: MudViewControllerdelegate?
     var isTopViewController = false
     var firstAppear: Bool = true
 
     //MARK: - Life Cycle
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
         
@@ -26,7 +26,7 @@ class MudViewController: UIViewController,UINavigationControllerDelegate {
         initView()
     }
 
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         MudPrint("didReceiveMemoryWarning")
@@ -52,11 +52,11 @@ class MudViewController: UIViewController,UINavigationControllerDelegate {
         
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override public func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override public func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if self.firstAppear {
             self.viewFirstDidAppear(animated)
@@ -65,7 +65,7 @@ class MudViewController: UIViewController,UINavigationControllerDelegate {
         self.isTopViewController = true
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override public func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         self.isTopViewController = false
     }
@@ -117,10 +117,10 @@ extension MudViewController {
     }
     
     func popToBeforeControllerAnimated(animated: Bool) {
-        for var i = 0; i < self.navigationController?.viewControllers.count; i++ {
-            let tvc: UIViewController? = self.navigationController?.viewControllers[i]
-            if tvc != nil && tvc == self && i > 1{
-                let tovc: UIViewController? = self.navigationController?.viewControllers[i-2]
+        for index in 0 ..< self.navigationController!.viewControllers.count {
+            let tvc: UIViewController? = self.navigationController?.viewControllers[index]
+            if tvc != nil && tvc == self && index > 1{
+                let tovc: UIViewController? = self.navigationController?.viewControllers[index-2]
                 if tovc != nil {
                     self.navigationController?.popToViewController(tovc!, animated: animated)
                 }
@@ -129,7 +129,7 @@ extension MudViewController {
     }
     
     func popViewControllerWithData(data: AnyObject? ,animated: Bool) {
-        if self.dataDelegate != nil && self.dataDelegate?.respondsToSelector("dataFromTopViewController:tag:") != nil {
+        if self.dataDelegate != nil {
             self.dataDelegate?.dataFromTopViewController(data,tag: String(UTF8String: object_getClassName(self)) )
         }
         self.navigationController?.popViewControllerAnimated(animated)
@@ -180,11 +180,11 @@ extension MudViewController {
     }
     
     func addObserveNotificationWithName(aName: String) {
-        NSNotificationCenter.defaultCenter().addObserver(self,selector:"handNotification:",name: aName,object:nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,selector:#selector(MudViewController.handNotification(_:)),name: aName,object:nil)
     }
     
     func addObserveNotificationWithName(aName: String, object anObject: AnyObject?) {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handNotification:", name: aName, object: anObject)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MudViewController.handNotification(_:)), name: aName, object: anObject)
     }
     
     func removeObserverNotificationWithName(aName: String) {
@@ -216,7 +216,7 @@ extension MudViewController {
 extension MudViewController {
     func setBackBarButtonWithImage(image: UIImage?) {
         self.navigationItem.leftBarButtonItem = nil;
-        let backItem: UIBarButtonItem = UIBarButtonItem.itemWithImage(image, target: self, action: "onBackButtonAction:")
+        let backItem: UIBarButtonItem = UIBarButtonItem.itemWithImage(image, target: self, action: #selector(MudViewController.onBackButtonAction(_:)))
         self.navigationItem.leftBarButtonItem = backItem
     }
     
@@ -228,14 +228,14 @@ extension MudViewController {
     
     func setLeftBarButtonWithImage(image: UIImage?) {
         self.navigationItem.leftBarButtonItem = nil;
-        let backItem: UIBarButtonItem = UIBarButtonItem.itemWithImage(image,target:self,action:"onLeftButtonAction:")
+        let backItem: UIBarButtonItem = UIBarButtonItem.itemWithImage(image,target:self,action:#selector(MudViewController.onLeftButtonAction(_:)))
         self.navigationItem.leftBarButtonItem = backItem
     }
     
     func setRightBarButtonWithImage(image: UIImage?) {
         self.navigationItem.rightBarButtonItem = nil;
         if image != nil {
-            let rightItem: UIBarButtonItem = UIBarButtonItem.itemWithImage(image ,target:self ,action:"onRightButtonAction:")
+            let rightItem: UIBarButtonItem = UIBarButtonItem.itemWithImage(image ,target:self ,action:#selector(MudViewController.onRightButtonAction(_:)))
             self.navigationItem.setRightBarButtonItem(rightItem, animated: false)
         }
     }
@@ -248,13 +248,13 @@ extension MudViewController {
     
     func setRightBarButtonWithTitle(title: String,titleColor: UIColor? = nil,textAlignment: UIControlContentHorizontalAlignment = UIControlContentHorizontalAlignment.Right) {
         self.navigationItem.rightBarButtonItem = nil;
-        let rightItem:UIBarButtonItem = UIBarButtonItem.itemWithTitle(title ,target:self ,action:"onRightButtonAction:",titleColor: titleColor,textAlignment: textAlignment)
+        let rightItem:UIBarButtonItem = UIBarButtonItem.itemWithTitle(title ,target:self ,action:#selector(MudViewController.onRightButtonAction(_:)),titleColor: titleColor,textAlignment: textAlignment)
         self.navigationItem.rightBarButtonItem = rightItem
     }
     
     func setLeftBarButtonWithTitle(title: String,titleColor: UIColor? = nil,textAlignment: UIControlContentHorizontalAlignment = UIControlContentHorizontalAlignment.Left) {
         self.navigationItem.leftBarButtonItem = nil;
-        let leftItem:UIBarButtonItem = UIBarButtonItem.itemWithTitle(title,target:self,action: "onLeftButtonAction:",titleColor: titleColor,textAlignment: textAlignment)
+        let leftItem:UIBarButtonItem = UIBarButtonItem.itemWithTitle(title,target:self,action: #selector(MudViewController.onLeftButtonAction(_:)),titleColor: titleColor,textAlignment: textAlignment)
         self.navigationItem.leftBarButtonItem = leftItem
     }
     

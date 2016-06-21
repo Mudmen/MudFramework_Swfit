@@ -9,11 +9,49 @@
 /* Begin PBXBuildFile section */
 		64AAF6A41A75DD68001366A7 /* MudFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AAF6981A75DD68001366A7 /* MudFramework.framework */; };
 		64AAF6AB1A75DD68001366A7 /* MudFramework_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AAF6AA1A75DD68001366A7 /* MudFramework_SwiftTests.swift */; };
-		AE5416301CE5815E00570E23 /* MudLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE5415D01CE5815E00570E23 /* MudLocalization.strings */; };
+		AE195A7D1D1944BF00B626E5 /* MudFullScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A541D1944BF00B626E5 /* MudFullScreenViewController.swift */; };
+		AE195A7E1D1944BF00B626E5 /* MudLeftImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A551D1944BF00B626E5 /* MudLeftImageView.swift */; };
+		AE195A7F1D1944BF00B626E5 /* MudNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A561D1944BF00B626E5 /* MudNavigationBar.swift */; };
+		AE195A801D1944BF00B626E5 /* MudNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A571D1944BF00B626E5 /* MudNavigationController.swift */; };
+		AE195A811D1944BF00B626E5 /* MudNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A581D1944BF00B626E5 /* MudNavigationView.swift */; };
+		AE195A821D1944BF00B626E5 /* MudTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A591D1944BF00B626E5 /* MudTableView.swift */; };
+		AE195A831D1944BF00B626E5 /* MudTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A5A1D1944BF00B626E5 /* MudTableViewController.swift */; };
+		AE195A841D1944BF00B626E5 /* MudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A5B1D1944BF00B626E5 /* MudViewController.swift */; };
+		AE195A851D1944BF00B626E5 /* UIApplication+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A5D1D1944BF00B626E5 /* UIApplication+Category.swift */; };
+		AE195A861D1944BF00B626E5 /* UIBarButtonItem+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A5E1D1944BF00B626E5 /* UIBarButtonItem+extension.swift */; };
+		AE195A871D1944BF00B626E5 /* UIColor+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A5F1D1944BF00B626E5 /* UIColor+Category.swift */; };
+		AE195A881D1944BF00B626E5 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A601D1944BF00B626E5 /* UIDevice+Extension.swift */; };
+		AE195A891D1944BF00B626E5 /* UIImage+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A611D1944BF00B626E5 /* UIImage+Category.swift */; };
+		AE195A8A1D1944BF00B626E5 /* UIImage+Named.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A621D1944BF00B626E5 /* UIImage+Named.swift */; };
+		AE195A8B1D1944BF00B626E5 /* UIImageView+Larger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A631D1944BF00B626E5 /* UIImageView+Larger.swift */; };
+		AE195A8C1D1944BF00B626E5 /* UIView+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A641D1944BF00B626E5 /* UIView+Category.swift */; };
+		AE195A8D1D1944BF00B626E5 /* MudActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A661D1944BF00B626E5 /* MudActionSheet.swift */; };
+		AE195A8E1D1944BF00B626E5 /* MudBadgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A671D1944BF00B626E5 /* MudBadgeButton.swift */; };
+		AE195A8F1D1944BF00B626E5 /* MudCornerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A681D1944BF00B626E5 /* MudCornerLabel.swift */; };
+		AE195A901D1944BF00B626E5 /* MudDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A691D1944BF00B626E5 /* MudDatePicker.swift */; };
+		AE195A911D1944BF00B626E5 /* MudImageBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A6A1D1944BF00B626E5 /* MudImageBrowserViewController.swift */; };
+		AE195A921D1944BF00B626E5 /* MudLoadMoreFootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A6B1D1944BF00B626E5 /* MudLoadMoreFootView.swift */; };
+		AE195A931D1944BF00B626E5 /* MudRectangleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A6C1D1944BF00B626E5 /* MudRectangleImageView.swift */; };
+		AE195A941D1944BF00B626E5 /* MudRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A6D1D1944BF00B626E5 /* MudRefreshControl.swift */; };
+		AE195A951D1944BF00B626E5 /* MudRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A6E1D1944BF00B626E5 /* MudRefreshView.swift */; };
+		AE195A961D1944BF00B626E5 /* MudRoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A6F1D1944BF00B626E5 /* MudRoundImageView.swift */; };
+		AE195A971D1944BF00B626E5 /* MudSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A701D1944BF00B626E5 /* MudSearchBar.swift */; };
+		AE195A981D1944BF00B626E5 /* MudSizeFitLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A711D1944BF00B626E5 /* MudSizeFitLabel.swift */; };
+		AE195A991D1944BF00B626E5 /* MudSpring.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A721D1944BF00B626E5 /* MudSpring.swift */; };
+		AE195A9A1D1944BF00B626E5 /* MudSpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A731D1944BF00B626E5 /* MudSpringButton.swift */; };
+		AE195A9B1D1944BF00B626E5 /* MudSpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A741D1944BF00B626E5 /* MudSpringLabel.swift */; };
+		AE195A9C1D1944BF00B626E5 /* MudStarOverlayImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A751D1944BF00B626E5 /* MudStarOverlayImageView.swift */; };
+		AE195A9D1D1944BF00B626E5 /* MudStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A761D1944BF00B626E5 /* MudStarView.swift */; };
+		AE195A9E1D1944BF00B626E5 /* MudTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A771D1944BF00B626E5 /* MudTableViewCell.swift */; };
+		AE195A9F1D1944BF00B626E5 /* MudTabPageBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A781D1944BF00B626E5 /* MudTabPageBar.swift */; };
+		AE195AA01D1944BF00B626E5 /* MudTabPageBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A791D1944BF00B626E5 /* MudTabPageBarItem.swift */; };
+		AE195AA11D1944BF00B626E5 /* MudTabPagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A7A1D1944BF00B626E5 /* MudTabPagesView.swift */; };
+		AE195AA21D1944BF00B626E5 /* MudTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A7B1D1944BF00B626E5 /* MudTextView.swift */; };
+		AE195AA31D1944BF00B626E5 /* MudVerticalLayoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A7C1D1944BF00B626E5 /* MudVerticalLayoutButton.swift */; };
+		AE5416301CE5815E00570E23 /* MudLocalization.strings in Headers */ = {isa = PBXBuildFile; fileRef = AE5415D01CE5815E00570E23 /* MudLocalization.strings */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE5416311CE5815E00570E23 /* MudLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415D31CE5815E00570E23 /* MudLocationManager.swift */; };
 		AE5416321CE5815E00570E23 /* MudKeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415D71CE5815E00570E23 /* MudKeyChainManager.swift */; };
 		AE5416331CE5815E00570E23 /* MudLocalString.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415D81CE5815E00570E23 /* MudLocalString.swift */; };
-		AE5416341CE5815E00570E23 /* MudManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415D91CE5815E00570E23 /* MudManager.swift */; };
 		AE5416351CE5815E00570E23 /* MudRequestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415DA1CE5815E00570E23 /* MudRequestBase.swift */; };
 		AE5416361CE5815E00570E23 /* MudRequestCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415DB1CE5815E00570E23 /* MudRequestCenter.swift */; };
 		AE5416371CE5815E00570E23 /* String+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415DC1CE5815E00570E23 /* String+Category.swift */; };
@@ -33,49 +71,8 @@
 		AE5416471CE5815E00570E23 /* NSLocale+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415EE1CE5815E00570E23 /* NSLocale+Extension.swift */; };
 		AE5416481CE5815E00570E23 /* String+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415EF1CE5815E00570E23 /* String+Convert.swift */; };
 		AE5416491CE5815E00570E23 /* typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415F11CE5815E00570E23 /* typealias.swift */; };
-		AE54164A1CE5815E00570E23 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE5415F21CE5815E00570E23 /* Info.plist */; };
 		AE54164B1CE5815E00570E23 /* MudMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415F41CE5815E00570E23 /* MudMacro.swift */; };
-		AE54164C1CE5815E00570E23 /* MudResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AE5415F51CE5815E00570E23 /* MudResource.bundle */; };
-		AE54165B1CE5815E00570E23 /* MudFullScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416061CE5815E00570E23 /* MudFullScreenViewController.swift */; };
-		AE54165C1CE5815E00570E23 /* MudLeftImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416071CE5815E00570E23 /* MudLeftImageView.swift */; };
-		AE54165D1CE5815E00570E23 /* MudNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416081CE5815E00570E23 /* MudNavigationBar.swift */; };
-		AE54165E1CE5815E00570E23 /* MudNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416091CE5815E00570E23 /* MudNavigationController.swift */; };
-		AE54165F1CE5815E00570E23 /* MudNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54160A1CE5815E00570E23 /* MudNavigationView.swift */; };
-		AE5416601CE5815E00570E23 /* MudTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54160C1CE5815E00570E23 /* MudTableView.swift */; };
-		AE5416611CE5815E00570E23 /* MudTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54160D1CE5815E00570E23 /* MudTableViewController.swift */; };
-		AE5416621CE5815E00570E23 /* MudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54160E1CE5815E00570E23 /* MudViewController.swift */; };
-		AE5416631CE5815E00570E23 /* UIApplication+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416101CE5815E00570E23 /* UIApplication+Category.swift */; };
-		AE5416641CE5815E00570E23 /* UIBarButtonItem+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416111CE5815E00570E23 /* UIBarButtonItem+extension.swift */; };
-		AE5416651CE5815E00570E23 /* UIColor+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416121CE5815E00570E23 /* UIColor+Category.swift */; };
-		AE5416661CE5815E00570E23 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416131CE5815E00570E23 /* UIDevice+Extension.swift */; };
-		AE5416671CE5815E00570E23 /* UIImage+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416141CE5815E00570E23 /* UIImage+Category.swift */; };
-		AE5416681CE5815E00570E23 /* UIImage+Named.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416151CE5815E00570E23 /* UIImage+Named.swift */; };
-		AE5416691CE5815E00570E23 /* UIImageView+Larger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416161CE5815E00570E23 /* UIImageView+Larger.swift */; };
-		AE54166A1CE5815E00570E23 /* UIView+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416171CE5815E00570E23 /* UIView+Category.swift */; };
-		AE54166B1CE5815E00570E23 /* MudActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416191CE5815E00570E23 /* MudActionSheet.swift */; };
-		AE54166C1CE5815E00570E23 /* MudBadgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54161A1CE5815E00570E23 /* MudBadgeButton.swift */; };
-		AE54166D1CE5815E00570E23 /* MudCornerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54161B1CE5815E00570E23 /* MudCornerLabel.swift */; };
-		AE54166E1CE5815E00570E23 /* MudDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54161C1CE5815E00570E23 /* MudDatePicker.swift */; };
-		AE54166F1CE5815E00570E23 /* MudImageBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54161D1CE5815E00570E23 /* MudImageBrowserViewController.swift */; };
-		AE5416701CE5815E00570E23 /* MudLoadMoreFootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54161E1CE5815E00570E23 /* MudLoadMoreFootView.swift */; };
-		AE5416711CE5815E00570E23 /* MudRectangleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54161F1CE5815E00570E23 /* MudRectangleImageView.swift */; };
-		AE5416721CE5815E00570E23 /* MudRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416201CE5815E00570E23 /* MudRefreshControl.swift */; };
-		AE5416731CE5815E00570E23 /* MudRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416211CE5815E00570E23 /* MudRefreshView.swift */; };
-		AE5416741CE5815E00570E23 /* MudRoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416221CE5815E00570E23 /* MudRoundImageView.swift */; };
-		AE5416751CE5815E00570E23 /* MudSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416231CE5815E00570E23 /* MudSearchBar.swift */; };
-		AE5416761CE5815E00570E23 /* MudSizeFitLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416241CE5815E00570E23 /* MudSizeFitLabel.swift */; };
-		AE5416771CE5815E00570E23 /* MudSpring.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416251CE5815E00570E23 /* MudSpring.swift */; };
-		AE5416781CE5815E00570E23 /* MudSpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416261CE5815E00570E23 /* MudSpringButton.swift */; };
-		AE5416791CE5815E00570E23 /* MudSpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416271CE5815E00570E23 /* MudSpringLabel.swift */; };
-		AE54167A1CE5815E00570E23 /* MudStarOverlayImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416281CE5815E00570E23 /* MudStarOverlayImageView.swift */; };
-		AE54167B1CE5815E00570E23 /* MudStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5416291CE5815E00570E23 /* MudStarView.swift */; };
-		AE54167C1CE5815E00570E23 /* MudTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54162A1CE5815E00570E23 /* MudTableViewCell.swift */; };
-		AE54167D1CE5815E00570E23 /* MudTabPageBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54162B1CE5815E00570E23 /* MudTabPageBar.swift */; };
-		AE54167E1CE5815E00570E23 /* MudTabPageBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54162C1CE5815E00570E23 /* MudTabPageBarItem.swift */; };
-		AE54167F1CE5815E00570E23 /* MudTabPagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54162D1CE5815E00570E23 /* MudTabPagesView.swift */; };
-		AE5416801CE5815E00570E23 /* MudTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54162E1CE5815E00570E23 /* MudTextView.swift */; };
-		AE5416811CE5815E00570E23 /* MudVerticalLayoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54162F1CE5815E00570E23 /* MudVerticalLayoutButton.swift */; };
-		AE5416AC1CE5AA4800570E23 /* MudLocationManager.swift in Headers */ = {isa = PBXBuildFile; fileRef = AE5415D31CE5815E00570E23 /* MudLocationManager.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE54164C1CE5815E00570E23 /* MudResource.bundle in Headers */ = {isa = PBXBuildFile; fileRef = AE5415F51CE5815E00570E23 /* MudResource.bundle */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,13 +90,51 @@
 		64AAF6A31A75DD68001366A7 /* MudFramework_SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MudFramework_SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64AAF6A91A75DD68001366A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64AAF6AA1A75DD68001366A7 /* MudFramework_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MudFramework_SwiftTests.swift; sourceTree = "<group>"; };
+		AE195A541D1944BF00B626E5 /* MudFullScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudFullScreenViewController.swift; sourceTree = "<group>"; };
+		AE195A551D1944BF00B626E5 /* MudLeftImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudLeftImageView.swift; sourceTree = "<group>"; };
+		AE195A561D1944BF00B626E5 /* MudNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudNavigationBar.swift; sourceTree = "<group>"; };
+		AE195A571D1944BF00B626E5 /* MudNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudNavigationController.swift; sourceTree = "<group>"; };
+		AE195A581D1944BF00B626E5 /* MudNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudNavigationView.swift; sourceTree = "<group>"; };
+		AE195A591D1944BF00B626E5 /* MudTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudTableView.swift; sourceTree = "<group>"; };
+		AE195A5A1D1944BF00B626E5 /* MudTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudTableViewController.swift; sourceTree = "<group>"; };
+		AE195A5B1D1944BF00B626E5 /* MudViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudViewController.swift; sourceTree = "<group>"; };
+		AE195A5D1D1944BF00B626E5 /* UIApplication+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Category.swift"; sourceTree = "<group>"; };
+		AE195A5E1D1944BF00B626E5 /* UIBarButtonItem+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+extension.swift"; sourceTree = "<group>"; };
+		AE195A5F1D1944BF00B626E5 /* UIColor+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Category.swift"; sourceTree = "<group>"; };
+		AE195A601D1944BF00B626E5 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		AE195A611D1944BF00B626E5 /* UIImage+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Category.swift"; sourceTree = "<group>"; };
+		AE195A621D1944BF00B626E5 /* UIImage+Named.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Named.swift"; sourceTree = "<group>"; };
+		AE195A631D1944BF00B626E5 /* UIImageView+Larger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Larger.swift"; sourceTree = "<group>"; };
+		AE195A641D1944BF00B626E5 /* UIView+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Category.swift"; sourceTree = "<group>"; };
+		AE195A661D1944BF00B626E5 /* MudActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudActionSheet.swift; sourceTree = "<group>"; };
+		AE195A671D1944BF00B626E5 /* MudBadgeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudBadgeButton.swift; sourceTree = "<group>"; };
+		AE195A681D1944BF00B626E5 /* MudCornerLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudCornerLabel.swift; sourceTree = "<group>"; };
+		AE195A691D1944BF00B626E5 /* MudDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudDatePicker.swift; sourceTree = "<group>"; };
+		AE195A6A1D1944BF00B626E5 /* MudImageBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudImageBrowserViewController.swift; sourceTree = "<group>"; };
+		AE195A6B1D1944BF00B626E5 /* MudLoadMoreFootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudLoadMoreFootView.swift; sourceTree = "<group>"; };
+		AE195A6C1D1944BF00B626E5 /* MudRectangleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudRectangleImageView.swift; sourceTree = "<group>"; };
+		AE195A6D1D1944BF00B626E5 /* MudRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudRefreshControl.swift; sourceTree = "<group>"; };
+		AE195A6E1D1944BF00B626E5 /* MudRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudRefreshView.swift; sourceTree = "<group>"; };
+		AE195A6F1D1944BF00B626E5 /* MudRoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudRoundImageView.swift; sourceTree = "<group>"; };
+		AE195A701D1944BF00B626E5 /* MudSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudSearchBar.swift; sourceTree = "<group>"; };
+		AE195A711D1944BF00B626E5 /* MudSizeFitLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudSizeFitLabel.swift; sourceTree = "<group>"; };
+		AE195A721D1944BF00B626E5 /* MudSpring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudSpring.swift; sourceTree = "<group>"; };
+		AE195A731D1944BF00B626E5 /* MudSpringButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudSpringButton.swift; sourceTree = "<group>"; };
+		AE195A741D1944BF00B626E5 /* MudSpringLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudSpringLabel.swift; sourceTree = "<group>"; };
+		AE195A751D1944BF00B626E5 /* MudStarOverlayImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudStarOverlayImageView.swift; sourceTree = "<group>"; };
+		AE195A761D1944BF00B626E5 /* MudStarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudStarView.swift; sourceTree = "<group>"; };
+		AE195A771D1944BF00B626E5 /* MudTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudTableViewCell.swift; sourceTree = "<group>"; };
+		AE195A781D1944BF00B626E5 /* MudTabPageBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudTabPageBar.swift; sourceTree = "<group>"; };
+		AE195A791D1944BF00B626E5 /* MudTabPageBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudTabPageBarItem.swift; sourceTree = "<group>"; };
+		AE195A7A1D1944BF00B626E5 /* MudTabPagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudTabPagesView.swift; sourceTree = "<group>"; };
+		AE195A7B1D1944BF00B626E5 /* MudTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudTextView.swift; sourceTree = "<group>"; };
+		AE195A7C1D1944BF00B626E5 /* MudVerticalLayoutButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudVerticalLayoutButton.swift; sourceTree = "<group>"; };
 		AE5415D11CE5815E00570E23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/MudLocalization.strings; sourceTree = "<group>"; };
 		AE5415D21CE5815E00570E23 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MudLocalization.strings; sourceTree = "<group>"; };
 		AE5415D31CE5815E00570E23 /* MudLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudLocationManager.swift; sourceTree = "<group>"; };
 		AE5415D41CE5815E00570E23 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MudLocalization.strings"; sourceTree = "<group>"; };
 		AE5415D71CE5815E00570E23 /* MudKeyChainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudKeyChainManager.swift; sourceTree = "<group>"; };
 		AE5415D81CE5815E00570E23 /* MudLocalString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudLocalString.swift; sourceTree = "<group>"; };
-		AE5415D91CE5815E00570E23 /* MudManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudManager.swift; sourceTree = "<group>"; };
 		AE5415DA1CE5815E00570E23 /* MudRequestBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudRequestBase.swift; sourceTree = "<group>"; };
 		AE5415DB1CE5815E00570E23 /* MudRequestCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudRequestCenter.swift; sourceTree = "<group>"; };
 		AE5415DC1CE5815E00570E23 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Category.swift"; sourceTree = "<group>"; };
@@ -122,45 +157,6 @@
 		AE5415F21CE5815E00570E23 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE5415F41CE5815E00570E23 /* MudMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudMacro.swift; sourceTree = "<group>"; };
 		AE5415F51CE5815E00570E23 /* MudResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MudResource.bundle; sourceTree = "<group>"; };
-		AE5416061CE5815E00570E23 /* MudFullScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudFullScreenViewController.swift; sourceTree = "<group>"; };
-		AE5416071CE5815E00570E23 /* MudLeftImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudLeftImageView.swift; sourceTree = "<group>"; };
-		AE5416081CE5815E00570E23 /* MudNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudNavigationBar.swift; sourceTree = "<group>"; };
-		AE5416091CE5815E00570E23 /* MudNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudNavigationController.swift; sourceTree = "<group>"; };
-		AE54160A1CE5815E00570E23 /* MudNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudNavigationView.swift; sourceTree = "<group>"; };
-		AE54160C1CE5815E00570E23 /* MudTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudTableView.swift; sourceTree = "<group>"; };
-		AE54160D1CE5815E00570E23 /* MudTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudTableViewController.swift; sourceTree = "<group>"; };
-		AE54160E1CE5815E00570E23 /* MudViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudViewController.swift; sourceTree = "<group>"; };
-		AE5416101CE5815E00570E23 /* UIApplication+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Category.swift"; sourceTree = "<group>"; };
-		AE5416111CE5815E00570E23 /* UIBarButtonItem+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+extension.swift"; sourceTree = "<group>"; };
-		AE5416121CE5815E00570E23 /* UIColor+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Category.swift"; sourceTree = "<group>"; };
-		AE5416131CE5815E00570E23 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
-		AE5416141CE5815E00570E23 /* UIImage+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Category.swift"; sourceTree = "<group>"; };
-		AE5416151CE5815E00570E23 /* UIImage+Named.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Named.swift"; sourceTree = "<group>"; };
-		AE5416161CE5815E00570E23 /* UIImageView+Larger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Larger.swift"; sourceTree = "<group>"; };
-		AE5416171CE5815E00570E23 /* UIView+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Category.swift"; sourceTree = "<group>"; };
-		AE5416191CE5815E00570E23 /* MudActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudActionSheet.swift; sourceTree = "<group>"; };
-		AE54161A1CE5815E00570E23 /* MudBadgeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudBadgeButton.swift; sourceTree = "<group>"; };
-		AE54161B1CE5815E00570E23 /* MudCornerLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudCornerLabel.swift; sourceTree = "<group>"; };
-		AE54161C1CE5815E00570E23 /* MudDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudDatePicker.swift; sourceTree = "<group>"; };
-		AE54161D1CE5815E00570E23 /* MudImageBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudImageBrowserViewController.swift; sourceTree = "<group>"; };
-		AE54161E1CE5815E00570E23 /* MudLoadMoreFootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudLoadMoreFootView.swift; sourceTree = "<group>"; };
-		AE54161F1CE5815E00570E23 /* MudRectangleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudRectangleImageView.swift; sourceTree = "<group>"; };
-		AE5416201CE5815E00570E23 /* MudRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudRefreshControl.swift; sourceTree = "<group>"; };
-		AE5416211CE5815E00570E23 /* MudRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudRefreshView.swift; sourceTree = "<group>"; };
-		AE5416221CE5815E00570E23 /* MudRoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudRoundImageView.swift; sourceTree = "<group>"; };
-		AE5416231CE5815E00570E23 /* MudSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudSearchBar.swift; sourceTree = "<group>"; };
-		AE5416241CE5815E00570E23 /* MudSizeFitLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudSizeFitLabel.swift; sourceTree = "<group>"; };
-		AE5416251CE5815E00570E23 /* MudSpring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudSpring.swift; sourceTree = "<group>"; };
-		AE5416261CE5815E00570E23 /* MudSpringButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudSpringButton.swift; sourceTree = "<group>"; };
-		AE5416271CE5815E00570E23 /* MudSpringLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudSpringLabel.swift; sourceTree = "<group>"; };
-		AE5416281CE5815E00570E23 /* MudStarOverlayImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudStarOverlayImageView.swift; sourceTree = "<group>"; };
-		AE5416291CE5815E00570E23 /* MudStarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudStarView.swift; sourceTree = "<group>"; };
-		AE54162A1CE5815E00570E23 /* MudTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudTableViewCell.swift; sourceTree = "<group>"; };
-		AE54162B1CE5815E00570E23 /* MudTabPageBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudTabPageBar.swift; sourceTree = "<group>"; };
-		AE54162C1CE5815E00570E23 /* MudTabPageBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudTabPageBarItem.swift; sourceTree = "<group>"; };
-		AE54162D1CE5815E00570E23 /* MudTabPagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudTabPagesView.swift; sourceTree = "<group>"; };
-		AE54162E1CE5815E00570E23 /* MudTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudTextView.swift; sourceTree = "<group>"; };
-		AE54162F1CE5815E00570E23 /* MudVerticalLayoutButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudVerticalLayoutButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,15 +213,85 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		AE195A521D1944BF00B626E5 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				AE195A531D1944BF00B626E5 /* Category */,
+				AE195A541D1944BF00B626E5 /* MudFullScreenViewController.swift */,
+				AE195A551D1944BF00B626E5 /* MudLeftImageView.swift */,
+				AE195A561D1944BF00B626E5 /* MudNavigationBar.swift */,
+				AE195A571D1944BF00B626E5 /* MudNavigationController.swift */,
+				AE195A581D1944BF00B626E5 /* MudNavigationView.swift */,
+				AE195A591D1944BF00B626E5 /* MudTableView.swift */,
+				AE195A5A1D1944BF00B626E5 /* MudTableViewController.swift */,
+				AE195A5B1D1944BF00B626E5 /* MudViewController.swift */,
+				AE195A5C1D1944BF00B626E5 /* UIKit+Category */,
+				AE195A651D1944BF00B626E5 /* UIKit+CustomView */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		AE195A531D1944BF00B626E5 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		AE195A5C1D1944BF00B626E5 /* UIKit+Category */ = {
+			isa = PBXGroup;
+			children = (
+				AE195A5D1D1944BF00B626E5 /* UIApplication+Category.swift */,
+				AE195A5E1D1944BF00B626E5 /* UIBarButtonItem+extension.swift */,
+				AE195A5F1D1944BF00B626E5 /* UIColor+Category.swift */,
+				AE195A601D1944BF00B626E5 /* UIDevice+Extension.swift */,
+				AE195A611D1944BF00B626E5 /* UIImage+Category.swift */,
+				AE195A621D1944BF00B626E5 /* UIImage+Named.swift */,
+				AE195A631D1944BF00B626E5 /* UIImageView+Larger.swift */,
+				AE195A641D1944BF00B626E5 /* UIView+Category.swift */,
+			);
+			path = "UIKit+Category";
+			sourceTree = "<group>";
+		};
+		AE195A651D1944BF00B626E5 /* UIKit+CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				AE195A661D1944BF00B626E5 /* MudActionSheet.swift */,
+				AE195A671D1944BF00B626E5 /* MudBadgeButton.swift */,
+				AE195A681D1944BF00B626E5 /* MudCornerLabel.swift */,
+				AE195A691D1944BF00B626E5 /* MudDatePicker.swift */,
+				AE195A6A1D1944BF00B626E5 /* MudImageBrowserViewController.swift */,
+				AE195A6B1D1944BF00B626E5 /* MudLoadMoreFootView.swift */,
+				AE195A6C1D1944BF00B626E5 /* MudRectangleImageView.swift */,
+				AE195A6D1D1944BF00B626E5 /* MudRefreshControl.swift */,
+				AE195A6E1D1944BF00B626E5 /* MudRefreshView.swift */,
+				AE195A6F1D1944BF00B626E5 /* MudRoundImageView.swift */,
+				AE195A701D1944BF00B626E5 /* MudSearchBar.swift */,
+				AE195A711D1944BF00B626E5 /* MudSizeFitLabel.swift */,
+				AE195A721D1944BF00B626E5 /* MudSpring.swift */,
+				AE195A731D1944BF00B626E5 /* MudSpringButton.swift */,
+				AE195A741D1944BF00B626E5 /* MudSpringLabel.swift */,
+				AE195A751D1944BF00B626E5 /* MudStarOverlayImageView.swift */,
+				AE195A761D1944BF00B626E5 /* MudStarView.swift */,
+				AE195A771D1944BF00B626E5 /* MudTableViewCell.swift */,
+				AE195A781D1944BF00B626E5 /* MudTabPageBar.swift */,
+				AE195A791D1944BF00B626E5 /* MudTabPageBarItem.swift */,
+				AE195A7A1D1944BF00B626E5 /* MudTabPagesView.swift */,
+				AE195A7B1D1944BF00B626E5 /* MudTextView.swift */,
+				AE195A7C1D1944BF00B626E5 /* MudVerticalLayoutButton.swift */,
+			);
+			path = "UIKit+CustomView";
+			sourceTree = "<group>";
+		};
 		AE5415CE1CE5815E00570E23 /* MudFramework_Swift */ = {
 			isa = PBXGroup;
 			children = (
+				AE195A521D1944BF00B626E5 /* UIKit */,
+				AE5415F21CE5815E00570E23 /* Info.plist */,
 				AE5415CF1CE5815E00570E23 /* CoreLocation */,
 				AE5415D51CE5815E00570E23 /* Foundation */,
-				AE5415F21CE5815E00570E23 /* Info.plist */,
 				AE5415F31CE5815E00570E23 /* Macro */,
 				AE5415F51CE5815E00570E23 /* MudResource.bundle */,
-				AE5415F61CE5815E00570E23 /* UIKit */,
 			);
 			path = MudFramework_Swift;
 			sourceTree = "<group>";
@@ -255,7 +321,6 @@
 			children = (
 				AE5415D71CE5815E00570E23 /* MudKeyChainManager.swift */,
 				AE5415D81CE5815E00570E23 /* MudLocalString.swift */,
-				AE5415D91CE5815E00570E23 /* MudManager.swift */,
 				AE5415DA1CE5815E00570E23 /* MudRequestBase.swift */,
 				AE5415DB1CE5815E00570E23 /* MudRequestCenter.swift */,
 				AE5415DC1CE5815E00570E23 /* String+Category.swift */,
@@ -308,84 +373,6 @@
 			path = Macro;
 			sourceTree = "<group>";
 		};
-		AE5415F61CE5815E00570E23 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				AE5415F71CE5815E00570E23 /* Category */,
-				AE5416061CE5815E00570E23 /* MudFullScreenViewController.swift */,
-				AE5416071CE5815E00570E23 /* MudLeftImageView.swift */,
-				AE5416081CE5815E00570E23 /* MudNavigationBar.swift */,
-				AE5416091CE5815E00570E23 /* MudNavigationController.swift */,
-				AE54160A1CE5815E00570E23 /* MudNavigationView.swift */,
-				AE54160B1CE5815E00570E23 /* MudPlayer */,
-				AE54160C1CE5815E00570E23 /* MudTableView.swift */,
-				AE54160D1CE5815E00570E23 /* MudTableViewController.swift */,
-				AE54160E1CE5815E00570E23 /* MudViewController.swift */,
-				AE54160F1CE5815E00570E23 /* UIKit+Category */,
-				AE5416181CE5815E00570E23 /* UIKit+CustomView */,
-			);
-			path = UIKit;
-			sourceTree = "<group>";
-		};
-		AE5415F71CE5815E00570E23 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
-		AE54160B1CE5815E00570E23 /* MudPlayer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MudPlayer;
-			sourceTree = "<group>";
-		};
-		AE54160F1CE5815E00570E23 /* UIKit+Category */ = {
-			isa = PBXGroup;
-			children = (
-				AE5416101CE5815E00570E23 /* UIApplication+Category.swift */,
-				AE5416111CE5815E00570E23 /* UIBarButtonItem+extension.swift */,
-				AE5416121CE5815E00570E23 /* UIColor+Category.swift */,
-				AE5416131CE5815E00570E23 /* UIDevice+Extension.swift */,
-				AE5416141CE5815E00570E23 /* UIImage+Category.swift */,
-				AE5416151CE5815E00570E23 /* UIImage+Named.swift */,
-				AE5416161CE5815E00570E23 /* UIImageView+Larger.swift */,
-				AE5416171CE5815E00570E23 /* UIView+Category.swift */,
-			);
-			path = "UIKit+Category";
-			sourceTree = "<group>";
-		};
-		AE5416181CE5815E00570E23 /* UIKit+CustomView */ = {
-			isa = PBXGroup;
-			children = (
-				AE5416191CE5815E00570E23 /* MudActionSheet.swift */,
-				AE54161A1CE5815E00570E23 /* MudBadgeButton.swift */,
-				AE54161B1CE5815E00570E23 /* MudCornerLabel.swift */,
-				AE54161C1CE5815E00570E23 /* MudDatePicker.swift */,
-				AE54161D1CE5815E00570E23 /* MudImageBrowserViewController.swift */,
-				AE54161E1CE5815E00570E23 /* MudLoadMoreFootView.swift */,
-				AE54161F1CE5815E00570E23 /* MudRectangleImageView.swift */,
-				AE5416201CE5815E00570E23 /* MudRefreshControl.swift */,
-				AE5416211CE5815E00570E23 /* MudRefreshView.swift */,
-				AE5416221CE5815E00570E23 /* MudRoundImageView.swift */,
-				AE5416231CE5815E00570E23 /* MudSearchBar.swift */,
-				AE5416241CE5815E00570E23 /* MudSizeFitLabel.swift */,
-				AE5416251CE5815E00570E23 /* MudSpring.swift */,
-				AE5416261CE5815E00570E23 /* MudSpringButton.swift */,
-				AE5416271CE5815E00570E23 /* MudSpringLabel.swift */,
-				AE5416281CE5815E00570E23 /* MudStarOverlayImageView.swift */,
-				AE5416291CE5815E00570E23 /* MudStarView.swift */,
-				AE54162A1CE5815E00570E23 /* MudTableViewCell.swift */,
-				AE54162B1CE5815E00570E23 /* MudTabPageBar.swift */,
-				AE54162C1CE5815E00570E23 /* MudTabPageBarItem.swift */,
-				AE54162D1CE5815E00570E23 /* MudTabPagesView.swift */,
-				AE54162E1CE5815E00570E23 /* MudTextView.swift */,
-				AE54162F1CE5815E00570E23 /* MudVerticalLayoutButton.swift */,
-			);
-			path = "UIKit+CustomView";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -393,7 +380,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE5416AC1CE5AA4800570E23 /* MudLocationManager.swift in Headers */,
+				AE54164C1CE5815E00570E23 /* MudResource.bundle in Headers */,
+				AE5416301CE5815E00570E23 /* MudLocalization.strings in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,9 +467,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE54164C1CE5815E00570E23 /* MudResource.bundle in Resources */,
-				AE54164A1CE5815E00570E23 /* Info.plist in Resources */,
-				AE5416301CE5815E00570E23 /* MudLocalization.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,69 +484,68 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE5416761CE5815E00570E23 /* MudSizeFitLabel.swift in Sources */,
-				AE5416341CE5815E00570E23 /* MudManager.swift in Sources */,
-				AE54165F1CE5815E00570E23 /* MudNavigationView.swift in Sources */,
-				AE54166B1CE5815E00570E23 /* MudActionSheet.swift in Sources */,
-				AE54166A1CE5815E00570E23 /* UIView+Category.swift in Sources */,
 				AE5416451CE5815E00570E23 /* NSError+extension.swift in Sources */,
-				AE5416651CE5815E00570E23 /* UIColor+Category.swift in Sources */,
+				AE195A8B1D1944BF00B626E5 /* UIImageView+Larger.swift in Sources */,
+				AE195A7E1D1944BF00B626E5 /* MudLeftImageView.swift in Sources */,
 				AE5416331CE5815E00570E23 /* MudLocalString.swift in Sources */,
 				AE54163B1CE5815E00570E23 /* MudHttpSessionManager.swift in Sources */,
-				AE54166E1CE5815E00570E23 /* MudDatePicker.swift in Sources */,
-				AE54167C1CE5815E00570E23 /* MudTableViewCell.swift in Sources */,
-				AE5416611CE5815E00570E23 /* MudTableViewController.swift in Sources */,
 				AE5416401CE5815E00570E23 /* Int+Convert.swift in Sources */,
-				AE5416601CE5815E00570E23 /* MudTableView.swift in Sources */,
+				AE195A7D1D1944BF00B626E5 /* MudFullScreenViewController.swift in Sources */,
+				AE195A9D1D1944BF00B626E5 /* MudStarView.swift in Sources */,
 				AE5416321CE5815E00570E23 /* MudKeyChainManager.swift in Sources */,
+				AE195A9F1D1944BF00B626E5 /* MudTabPageBar.swift in Sources */,
 				AE54164B1CE5815E00570E23 /* MudMacro.swift in Sources */,
-				AE54166F1CE5815E00570E23 /* MudImageBrowserViewController.swift in Sources */,
-				AE5416681CE5815E00570E23 /* UIImage+Named.swift in Sources */,
-				AE5416631CE5815E00570E23 /* UIApplication+Category.swift in Sources */,
+				AE195A881D1944BF00B626E5 /* UIDevice+Extension.swift in Sources */,
+				AE195A9B1D1944BF00B626E5 /* MudSpringLabel.swift in Sources */,
+				AE195A921D1944BF00B626E5 /* MudLoadMoreFootView.swift in Sources */,
+				AE195A961D1944BF00B626E5 /* MudRoundImageView.swift in Sources */,
+				AE195A801D1944BF00B626E5 /* MudNavigationController.swift in Sources */,
 				AE54163C1CE5815E00570E23 /* MudURLRequest.swift in Sources */,
+				AE195A9E1D1944BF00B626E5 /* MudTableViewCell.swift in Sources */,
+				AE195A8D1D1944BF00B626E5 /* MudActionSheet.swift in Sources */,
+				AE195A941D1944BF00B626E5 /* MudRefreshControl.swift in Sources */,
+				AE195AA11D1944BF00B626E5 /* MudTabPagesView.swift in Sources */,
+				AE195A951D1944BF00B626E5 /* MudRefreshView.swift in Sources */,
+				AE195A8E1D1944BF00B626E5 /* MudBadgeButton.swift in Sources */,
 				AE54163F1CE5815E00570E23 /* Dictionary+Category.swift in Sources */,
-				AE5416771CE5815E00570E23 /* MudSpring.swift in Sources */,
+				AE195A9A1D1944BF00B626E5 /* MudSpringButton.swift in Sources */,
+				AE195A991D1944BF00B626E5 /* MudSpring.swift in Sources */,
+				AE195A821D1944BF00B626E5 /* MudTableView.swift in Sources */,
+				AE195AA01D1944BF00B626E5 /* MudTabPageBarItem.swift in Sources */,
 				AE54163A1CE5815E00570E23 /* MudHTTPResponseSerializer.swift in Sources */,
-				AE5416781CE5815E00570E23 /* MudSpringButton.swift in Sources */,
-				AE54167A1CE5815E00570E23 /* MudStarOverlayImageView.swift in Sources */,
-				AE5416711CE5815E00570E23 /* MudRectangleImageView.swift in Sources */,
-				AE5416621CE5815E00570E23 /* MudViewController.swift in Sources */,
-				AE5416731CE5815E00570E23 /* MudRefreshView.swift in Sources */,
-				AE5416791CE5815E00570E23 /* MudSpringLabel.swift in Sources */,
-				AE54167E1CE5815E00570E23 /* MudTabPageBarItem.swift in Sources */,
+				AE195AA21D1944BF00B626E5 /* MudTextView.swift in Sources */,
 				AE54163D1CE5815E00570E23 /* MudURLSessionManager.swift in Sources */,
+				AE195A831D1944BF00B626E5 /* MudTableViewController.swift in Sources */,
 				AE5416481CE5815E00570E23 /* String+Convert.swift in Sources */,
 				AE5416391CE5815E00570E23 /* MudHTTPRequestSerializer.swift in Sources */,
+				AE195AA31D1944BF00B626E5 /* MudVerticalLayoutButton.swift in Sources */,
+				AE195A901D1944BF00B626E5 /* MudDatePicker.swift in Sources */,
 				AE5416411CE5815E00570E23 /* Int+extension.swift in Sources */,
-				AE5416701CE5815E00570E23 /* MudLoadMoreFootView.swift in Sources */,
-				AE5416641CE5815E00570E23 /* UIBarButtonItem+extension.swift in Sources */,
+				AE195A851D1944BF00B626E5 /* UIApplication+Category.swift in Sources */,
+				AE195A861D1944BF00B626E5 /* UIBarButtonItem+extension.swift in Sources */,
 				AE5416471CE5815E00570E23 /* NSLocale+Extension.swift in Sources */,
-				AE5416751CE5815E00570E23 /* MudSearchBar.swift in Sources */,
-				AE5416661CE5815E00570E23 /* UIDevice+Extension.swift in Sources */,
+				AE195A9C1D1944BF00B626E5 /* MudStarOverlayImageView.swift in Sources */,
 				AE5416381CE5815E00570E23 /* MudHttpReqManager.swift in Sources */,
-				AE5416811CE5815E00570E23 /* MudVerticalLayoutButton.swift in Sources */,
-				AE5416801CE5815E00570E23 /* MudTextView.swift in Sources */,
 				AE5416361CE5815E00570E23 /* MudRequestCenter.swift in Sources */,
+				AE195A8A1D1944BF00B626E5 /* UIImage+Named.swift in Sources */,
 				AE5416371CE5815E00570E23 /* String+Category.swift in Sources */,
-				AE54165C1CE5815E00570E23 /* MudLeftImageView.swift in Sources */,
-				AE54166C1CE5815E00570E23 /* MudBadgeButton.swift in Sources */,
+				AE195A971D1944BF00B626E5 /* MudSearchBar.swift in Sources */,
 				AE5416351CE5815E00570E23 /* MudRequestBase.swift in Sources */,
-				AE54165D1CE5815E00570E23 /* MudNavigationBar.swift in Sources */,
-				AE54165E1CE5815E00570E23 /* MudNavigationController.swift in Sources */,
 				AE5416421CE5815E00570E23 /* NSDate+Extention.swift in Sources */,
-				AE5416671CE5815E00570E23 /* UIImage+Category.swift in Sources */,
+				AE195A891D1944BF00B626E5 /* UIImage+Category.swift in Sources */,
+				AE195A8F1D1944BF00B626E5 /* MudCornerLabel.swift in Sources */,
+				AE195A911D1944BF00B626E5 /* MudImageBrowserViewController.swift in Sources */,
 				AE5416311CE5815E00570E23 /* MudLocationManager.swift in Sources */,
+				AE195A841D1944BF00B626E5 /* MudViewController.swift in Sources */,
+				AE195A981D1944BF00B626E5 /* MudSizeFitLabel.swift in Sources */,
+				AE195A8C1D1944BF00B626E5 /* UIView+Category.swift in Sources */,
+				AE195A7F1D1944BF00B626E5 /* MudNavigationBar.swift in Sources */,
+				AE195A871D1944BF00B626E5 /* UIColor+Category.swift in Sources */,
 				AE54163E1CE5815E00570E23 /* Array+Category.swift in Sources */,
-				AE5416721CE5815E00570E23 /* MudRefreshControl.swift in Sources */,
-				AE5416741CE5815E00570E23 /* MudRoundImageView.swift in Sources */,
 				AE5416461CE5815E00570E23 /* NSJSONSerialization+Category.swift in Sources */,
-				AE5416691CE5815E00570E23 /* UIImageView+Larger.swift in Sources */,
-				AE54167B1CE5815E00570E23 /* MudStarView.swift in Sources */,
+				AE195A931D1944BF00B626E5 /* MudRectangleImageView.swift in Sources */,
 				AE5416491CE5815E00570E23 /* typealias.swift in Sources */,
-				AE54166D1CE5815E00570E23 /* MudCornerLabel.swift in Sources */,
-				AE54167D1CE5815E00570E23 /* MudTabPageBar.swift in Sources */,
-				AE54167F1CE5815E00570E23 /* MudTabPagesView.swift in Sources */,
-				AE54165B1CE5815E00570E23 /* MudFullScreenViewController.swift in Sources */,
+				AE195A811D1944BF00B626E5 /* MudNavigationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,7 +20,7 @@ enum UpdatingLocationMode : UInt {
 
 private let shareInstance = MudLocationManager()
 
-class MudLocationManager: MudManager ,CLLocationManagerDelegate,UIAlertViewDelegate {
+class MudLocationManager: NSObject ,CLLocationManagerDelegate,UIAlertViewDelegate {
     
     lazy private var locationManager: CLLocationManager! = {
         let tlocationManager = CLLocationManager()
