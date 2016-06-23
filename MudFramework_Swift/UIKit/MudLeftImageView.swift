@@ -8,11 +8,11 @@
 
 import UIKit
 
-let IMAGE_WIDTH: CGFloat = MUD_SCREEN_WIDTH*0.46875
+let IMAGE_WIDTH: CGFloat = MudScreen.width*0.46875
 
-class MudLeftImageView: UIImageView {
+public class MudLeftImageView: UIImageView {
     
-    override var image: UIImage? {
+    override public var image: UIImage? {
         didSet {
             if image != nil {
                 self.backgroundColor = UIColor.clearColor()

@@ -27,7 +27,7 @@ class MudTabPageBar: UIView{
             self.addViewsFromArray(self.items)
             if self.items != nil && self.items!.count > 0 {
                 for item in self.items! {
-                    item.addTarget(self, action:"onItemAction:", forControlEvents: UIControlEvents.TouchUpInside)
+                    item.addTarget(self, action:#selector(MudTabPageBar.onItemAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
                 }
                 self.setSelectItem(self.items![0])
             }
@@ -36,9 +36,9 @@ class MudTabPageBar: UIView{
     var selectIndex: NSInteger = 0 {
         didSet {
             //update all item status
-            for var i = 0; i < self.items!.count; i++ {
-                let tmpItem: MudTabPageBarItem = self.items![i]
-                if self.selectIndex == i {
+            for index in 0 ..< self.items!.count {
+                let tmpItem: MudTabPageBarItem = self.items![index]
+                if self.selectIndex == index {
                     tmpItem.selected = true
                 } else {
                     tmpItem.selected = false
@@ -89,10 +89,10 @@ class MudTabPageBar: UIView{
     }
     
     private func setSelectItem(item: MudTabPageBarItem!) {
-        for var i = 0; i < self.items!.count; i++ {
-            let tmpitem: MudTabPageBarItem = self.items![i]
+        for index in 0 ..< self.items!.count {
+            let tmpitem: MudTabPageBarItem = self.items![index]
             if item == tmpitem {
-                self.selectIndex = i;
+                self.selectIndex = index;
                 tmpitem.selected = true
             } else {
                 tmpitem.selected = false
@@ -103,7 +103,7 @@ class MudTabPageBar: UIView{
     //MARK: - Actions 
     func onItemAction(sender: MudTabPageBarItem) {
         self.setSelectItem(sender)
-        if (self.delegate != nil && self.delegate!.respondsToSelector("didSelectItem:atIndex:")) {
+        if self.delegate != nil  {
             self.delegate!.didSelectItem(sender, atIndex: self.selectIndex)
         }
     }
@@ -112,7 +112,7 @@ class MudTabPageBar: UIView{
     func setSelectItemWithIndex(index: Int) {
         self.selectIndex = index
         let sender = self.items![index]
-        if (self.delegate != nil && self.delegate!.respondsToSelector("didSelectItem:atIndex:")) {
+        if self.delegate != nil {
             self.delegate!.didSelectItem(sender, atIndex: self.selectIndex)
         }
     }

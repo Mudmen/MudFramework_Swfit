@@ -34,13 +34,13 @@ private let DeviceList = [
     /* Simulator */        "x86_64": "Simulator", "i386": "Simulator"
 ]
 
-extension UIDevice {
-    class func ADUDID()->String {
+public extension UIDevice {
+    public class func ADUDID()->String {
         let adUDID: String = ASIdentifierManager.sharedManager().advertisingIdentifier.UUIDString
         return adUDID
     }
     
-    class func deviceModel_SystemVersion()->String {
+    public class func deviceModel_SystemVersion()->String {
         return UIDevice.currentDevice().deviceFullModel()+"_"+UIDevice.currentDevice().systemVersion
     }
     

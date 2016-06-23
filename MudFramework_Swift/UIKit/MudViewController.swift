@@ -11,16 +11,14 @@ import Dispatch
 
 public class MudViewController: UIViewController,UINavigationControllerDelegate {
     
-    weak var dataDelegate: MudViewControllerdelegate?
-    var isTopViewController = false
-    var firstAppear: Bool = true
+    public weak var dataDelegate: MudViewControllerdelegate?
+    public private(set) var isTopViewController = false
+    public private(set) var firstAppear: Bool = true
 
     //MARK: - Life Cycle
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
-        
-        becomeRequestResponder()
         self.addNotificationObserver()
         initData()
         initView()
@@ -32,23 +30,23 @@ public class MudViewController: UIViewController,UINavigationControllerDelegate 
         MudPrint("didReceiveMemoryWarning")
     }
     
-    func viewFirstDidAppear(animated: Bool = true) {
+    public func viewFirstDidAppear(animated: Bool = true) {
         
     }
     
-    func initView() {
+    public func initView() {
        
     }
     
-    func initData() {
+    public func initData() {
         
     }
     
-    func refreshView() {
+    public func refreshView() {
         
     }
     
-    func refreshData() {
+    public func refreshData() {
         
     }
     
@@ -70,25 +68,15 @@ public class MudViewController: UIViewController,UINavigationControllerDelegate 
         self.isTopViewController = false
     }
     
-    //MARK: - Private API
-    func becomeRequestResponder() {
-        MudRequestCenter.defaultCenter.addResponder(self)
-    }
-    
-    func removeRequestResponder() {
-        MudRequestCenter.defaultCenter.removeResponder(self)
-    }
-    
     //MARK: - deinit
     deinit {
         MudPrint("deinit MudViewController ====== ")
-        removeRequestResponder();
         removeNotificationObserver()
     }
 
 }
 
-extension MudViewController {
+public extension MudViewController {
     func popViewControllerAnimated(animated: Bool) {
         if self.navigationController != nil && self.navigationController!.viewControllers.count > 0 {
             if self.navigationController?.viewControllers[0] != self {
@@ -99,7 +87,7 @@ extension MudViewController {
         self.dismissCurrentModalViewController()
     }
     
-    func popToRootViewController(animated: Bool) {
+    public func popToRootViewController(animated: Bool) {
         if self.navigationController?.presentingViewController != nil {
             self.navigationController?.dismissViewControllerAnimated(animated, completion: { () -> Void in
             })
@@ -108,15 +96,15 @@ extension MudViewController {
         }
     }
     
-    func popToFirstViewControllerAnimated(animated: Bool) {
+    public func popToFirstViewControllerAnimated(animated: Bool) {
         self.navigationController?.popToRootViewControllerAnimated(animated)
     }
     
-    func popToViewController(controller: UIViewController,animated: Bool) {
+    public func popToViewController(controller: UIViewController,animated: Bool) {
         self.navigationController?.popToViewController(controller, animated: animated)
     }
     
-    func popToBeforeControllerAnimated(animated: Bool) {
+    public func popToBeforeControllerAnimated(animated: Bool) {
         for index in 0 ..< self.navigationController!.viewControllers.count {
             let tvc: UIViewController? = self.navigationController?.viewControllers[index]
             if tvc != nil && tvc == self && index > 1{
@@ -128,18 +116,18 @@ extension MudViewController {
         }
     }
     
-    func popViewControllerWithData(data: AnyObject? ,animated: Bool) {
+    public func popViewControllerWithData(data: AnyObject? ,animated: Bool) {
         if self.dataDelegate != nil {
             self.dataDelegate?.dataFromTopViewController(data,tag: String(UTF8String: object_getClassName(self)) )
         }
         self.navigationController?.popViewControllerAnimated(animated)
     }
     
-    func popToSelf(animated: Bool) {
+    public func popToSelf(animated: Bool) {
         self.navigationController?.popToViewController(self, animated: animated)
     }
     
-    func pushToViewController(controller: UIViewController,animated: Bool) {
+    public func pushToViewController(controller: UIViewController,animated: Bool) {
         
         controller.hidesBottomBarWhenPushed = true
         if self.navigationController != nil {
@@ -153,61 +141,69 @@ extension MudViewController {
         }
     }
     
-    func presentToNaviViewController(modalViewController: UIViewController) {
+    public func presentToNaviViewController(modalViewController: UIViewController) {
         let navi = MudNavigationController(rootViewController: modalViewController)
         self.presentViewController(navi, animated: true) { () -> Void in
         }
     }
     
-    func presentToModalViewController(modalViewController: UIViewController) {
+    public func presentToModalViewController(modalViewController: UIViewController) {
         self.presentViewController(modalViewController, animated: true) { () -> Void in
         }
     }
     
-    func dismissCurrentModalViewController() {
+    public func dismissCurrentModalViewController() {
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
         })
     }
     
 }
 
-extension MudViewController {
-    func addNotificationObserver() {
-        
-    }
-    func removeNotificationObserver() {
+public extension MudViewController {
+    public func addNotificationObserver() {
         
     }
     
-    func addObserveNotificationWithName(aName: String) {
-        NSNotificationCenter.defaultCenter().addObserver(self,selector:#selector(MudViewController.handNotification(_:)),name: aName,object:nil)
+    public func removeNotificationObserver() {
+        
     }
     
-    func addObserveNotificationWithName(aName: String, object anObject: AnyObject?) {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MudViewController.handNotification(_:)), name: aName, object: anObject)
+    public func addObserveNotificationWithName(aName: String) {
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector:#selector(MudViewController.handNotification(_:)),
+                                                         name: aName,
+                                                         object:nil)
     }
     
-    func removeObserverNotificationWithName(aName: String) {
+    public func addObserveNotificationWithName(aName: String, object anObject: AnyObject?) {
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(MudViewController.handNotification(_:)),
+                                                         name: aName,
+                                                         object: anObject)
+    }
+    
+    public func removeObserverNotificationWithName(aName: String) {
         NSNotificationCenter.defaultCenter().removeObserver(self,name:aName,object:nil)
     }
     
-    func removeObserverNotificationWithName(aName: String,anObject: AnyObject) {
+    public func removeObserverNotificationWithName(aName: String,anObject: AnyObject) {
         NSNotificationCenter.defaultCenter().removeObserver(self,name:aName,object:anObject)
     }
     
-    func postNotification(notification: NSNotification) {
+    public func postNotification(notification: NSNotification) {
         NSNotificationCenter.defaultCenter().postNotification(notification)
     }
     
-    func postNotificationName(aName: String, anObject:AnyObject?) {
+    public func postNotificationName(aName: String, anObject:AnyObject?) {
         NSNotificationCenter.defaultCenter().postNotificationName(aName,object:anObject)
     }
     
-    func postNotificationName(aName: String, anObject:AnyObject?, userInfo aUserInfo:  [NSObject : AnyObject]?) {
+    public func postNotificationName(aName: String, anObject:AnyObject?, userInfo aUserInfo:  [NSObject : AnyObject]?) {
         NSNotificationCenter.defaultCenter().postNotificationName(aName, object: anObject, userInfo: aUserInfo)
     }
     
-    func handNotification(notification: NSNotification) {
+    public func handNotification(notification: NSNotification) {
+        
     }
     
     
@@ -248,13 +244,19 @@ extension MudViewController {
     
     func setRightBarButtonWithTitle(title: String,titleColor: UIColor? = nil,textAlignment: UIControlContentHorizontalAlignment = UIControlContentHorizontalAlignment.Right) {
         self.navigationItem.rightBarButtonItem = nil;
-        let rightItem:UIBarButtonItem = UIBarButtonItem.itemWithTitle(title ,target:self ,action:#selector(MudViewController.onRightButtonAction(_:)),titleColor: titleColor,textAlignment: textAlignment)
+        let rightItem:UIBarButtonItem = UIBarButtonItem.itemWithTitle(title ,target:self ,
+                                                                      action:#selector(MudViewController.onRightButtonAction(_:)),
+                                                                      titleColor: titleColor,
+                                                                      textAlignment: textAlignment)
         self.navigationItem.rightBarButtonItem = rightItem
     }
     
     func setLeftBarButtonWithTitle(title: String,titleColor: UIColor? = nil,textAlignment: UIControlContentHorizontalAlignment = UIControlContentHorizontalAlignment.Left) {
         self.navigationItem.leftBarButtonItem = nil;
-        let leftItem:UIBarButtonItem = UIBarButtonItem.itemWithTitle(title,target:self,action: #selector(MudViewController.onLeftButtonAction(_:)),titleColor: titleColor,textAlignment: textAlignment)
+        let leftItem:UIBarButtonItem = UIBarButtonItem.itemWithTitle(title,target:self,
+                                                                     action: #selector(MudViewController.onLeftButtonAction(_:)),
+                                                                     titleColor: titleColor,
+                                                                     textAlignment: textAlignment)
         self.navigationItem.leftBarButtonItem = leftItem
     }
     
@@ -285,6 +287,6 @@ extension MudViewController {
     
 }
 
-protocol MudViewControllerdelegate: NSObjectProtocol {
+public protocol MudViewControllerdelegate: NSObjectProtocol {
     func dataFromTopViewController(data: AnyObject?,tag: String?)
 }

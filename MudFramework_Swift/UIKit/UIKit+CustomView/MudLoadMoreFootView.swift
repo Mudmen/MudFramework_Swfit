@@ -46,7 +46,7 @@ class MudLoadMoreFootView: UIButton {
         activityView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
         self.addSubview(activityView!)
         if self.allTargets().count == 0 {
-            self.addTarget(self, action: "onButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+            self.addTarget(self, action: #selector(MudLoadMoreFootView.onButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         }
     }
     
@@ -60,7 +60,7 @@ class MudLoadMoreFootView: UIButton {
     //MARK: - Private API
     private func loadMore() {
         if self.status == FootViewStatus.CanLoadMore {
-            if (self.delegate != nil && self.delegate?.respondsToSelector("didTouchedWithStatus:") != nil) {
+            if (self.delegate != nil) {
                 self.delegate!.didTouchedWithStatus(self.status!)
             }
             self.status = FootViewStatus.LoadingMore;

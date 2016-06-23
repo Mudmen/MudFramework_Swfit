@@ -14,7 +14,7 @@ public class MudHttpReqManager: NSObject {
     
     private var sessionManager: MudHttpSessionManager!
     
-    class func sharedManager()->MudHttpReqManager {
+    public class func sharedManager()->MudHttpReqManager {
         return shareInstance
     }
     

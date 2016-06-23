@@ -8,22 +8,19 @@
 
 import UIKit
 
-class MudNavigationController: UINavigationController,UIGestureRecognizerDelegate {
-    var autorotate:Bool?
-
-    override func viewDidLoad() {
+public class MudNavigationController: UINavigationController,UIGestureRecognizerDelegate {
+    
+    override public func viewDidLoad() {
         let navibar: MudNavigationBar = MudNavigationBar()
         self.setValue(navibar, forKey: "navigationBar")
         super.viewDidLoad()
-        autorotate = true
         
-        if self.respondsToSelector("interactivePopGestureRecognizer") != false {
+        if self.respondsToSelector(Selector("interactivePopGestureRecognizer")) != false {
             self.interactivePopGestureRecognizer?.delegate = self
         }
     }
     
-    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
-        
+    public func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
         let ret = self.viewControllers.count > 1 && !(self.valueForKey("_isTransitioning")!.boolValue)
         return ret
     }

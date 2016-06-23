@@ -8,36 +8,36 @@
 
 import Foundation
 
-extension String {
-    var doubleValue: Double {
+public extension String {
+    public var doubleValue: Double {
         return NSString(string: self).doubleValue
     }
     
-    var floatValue: Float {
+    public var floatValue: Float {
         return NSString(string: self).floatValue
     }
     
-    var intValue: Int32 {
+    public var intValue: Int32 {
         return NSString(string: self).intValue
     }
     
     @available(iOS, introduced=2.0)
-    var integerValue: Int {
+    public var integerValue: Int {
         return NSString(string: self).integerValue
     }
     
     @available(iOS, introduced=2.0)
-    var longLongValue: Int64 {
+    public var longLongValue: Int64 {
         return NSString(string: self).longLongValue
     }
     
     @available(iOS, introduced=2.0)
-    var boolValue: Bool {
+    public var boolValue: Bool {
         return NSString(string: self).boolValue
     }
     
     //string
-    static func optimizedString(text: String?)->String {
+    public static func optimizedString(text: String?)->String {
         if String.hasCharacter(text) {
             var resultString = text!.stringByReplacingOccurrencesOfString("\r", withString: "    ", options: NSStringCompareOptions.AnchoredSearch, range: nil)
             let set = NSCharacterSet.whitespaceAndNewlineCharacterSet()

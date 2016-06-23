@@ -48,7 +48,8 @@
 		AE195AA11D1944BF00B626E5 /* MudTabPagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A7A1D1944BF00B626E5 /* MudTabPagesView.swift */; };
 		AE195AA21D1944BF00B626E5 /* MudTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A7B1D1944BF00B626E5 /* MudTextView.swift */; };
 		AE195AA31D1944BF00B626E5 /* MudVerticalLayoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195A7C1D1944BF00B626E5 /* MudVerticalLayoutButton.swift */; };
-		AE5416301CE5815E00570E23 /* MudLocalization.strings in Headers */ = {isa = PBXBuildFile; fileRef = AE5415D01CE5815E00570E23 /* MudLocalization.strings */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE195AAD1D194A0200B626E5 /* MudColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195AAC1D194A0200B626E5 /* MudColor.swift */; };
+		AE195AAF1D194A4200B626E5 /* MudFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE195AAE1D194A4200B626E5 /* MudFont.swift */; };
 		AE5416311CE5815E00570E23 /* MudLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415D31CE5815E00570E23 /* MudLocationManager.swift */; };
 		AE5416321CE5815E00570E23 /* MudKeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415D71CE5815E00570E23 /* MudKeyChainManager.swift */; };
 		AE5416331CE5815E00570E23 /* MudLocalString.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415D81CE5815E00570E23 /* MudLocalString.swift */; };
@@ -72,7 +73,6 @@
 		AE5416481CE5815E00570E23 /* String+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415EF1CE5815E00570E23 /* String+Convert.swift */; };
 		AE5416491CE5815E00570E23 /* typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415F11CE5815E00570E23 /* typealias.swift */; };
 		AE54164B1CE5815E00570E23 /* MudMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5415F41CE5815E00570E23 /* MudMacro.swift */; };
-		AE54164C1CE5815E00570E23 /* MudResource.bundle in Headers */ = {isa = PBXBuildFile; fileRef = AE5415F51CE5815E00570E23 /* MudResource.bundle */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +129,8 @@
 		AE195A7A1D1944BF00B626E5 /* MudTabPagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudTabPagesView.swift; sourceTree = "<group>"; };
 		AE195A7B1D1944BF00B626E5 /* MudTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudTextView.swift; sourceTree = "<group>"; };
 		AE195A7C1D1944BF00B626E5 /* MudVerticalLayoutButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudVerticalLayoutButton.swift; sourceTree = "<group>"; };
+		AE195AAC1D194A0200B626E5 /* MudColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudColor.swift; sourceTree = "<group>"; };
+		AE195AAE1D194A4200B626E5 /* MudFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudFont.swift; sourceTree = "<group>"; };
 		AE5415D11CE5815E00570E23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/MudLocalization.strings; sourceTree = "<group>"; };
 		AE5415D21CE5815E00570E23 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MudLocalization.strings; sourceTree = "<group>"; };
 		AE5415D31CE5815E00570E23 /* MudLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MudLocationManager.swift; sourceTree = "<group>"; };
@@ -279,6 +281,8 @@
 				AE195A7A1D1944BF00B626E5 /* MudTabPagesView.swift */,
 				AE195A7B1D1944BF00B626E5 /* MudTextView.swift */,
 				AE195A7C1D1944BF00B626E5 /* MudVerticalLayoutButton.swift */,
+				AE195AAC1D194A0200B626E5 /* MudColor.swift */,
+				AE195AAE1D194A4200B626E5 /* MudFont.swift */,
 			);
 			path = "UIKit+CustomView";
 			sourceTree = "<group>";
@@ -380,8 +384,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE54164C1CE5815E00570E23 /* MudResource.bundle in Headers */,
-				AE5416301CE5815E00570E23 /* MudLocalization.strings in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,7 +432,7 @@
 		64AAF68F1A75DD68001366A7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Mudmen;
 				TargetAttributes = {
@@ -497,6 +499,7 @@
 				AE54164B1CE5815E00570E23 /* MudMacro.swift in Sources */,
 				AE195A881D1944BF00B626E5 /* UIDevice+Extension.swift in Sources */,
 				AE195A9B1D1944BF00B626E5 /* MudSpringLabel.swift in Sources */,
+				AE195AAD1D194A0200B626E5 /* MudColor.swift in Sources */,
 				AE195A921D1944BF00B626E5 /* MudLoadMoreFootView.swift in Sources */,
 				AE195A961D1944BF00B626E5 /* MudRoundImageView.swift in Sources */,
 				AE195A801D1944BF00B626E5 /* MudNavigationController.swift in Sources */,
@@ -520,6 +523,7 @@
 				AE5416391CE5815E00570E23 /* MudHTTPRequestSerializer.swift in Sources */,
 				AE195AA31D1944BF00B626E5 /* MudVerticalLayoutButton.swift in Sources */,
 				AE195A901D1944BF00B626E5 /* MudDatePicker.swift in Sources */,
+				AE195AAF1D194A4200B626E5 /* MudFont.swift in Sources */,
 				AE5416411CE5815E00570E23 /* Int+extension.swift in Sources */,
 				AE195A851D1944BF00B626E5 /* UIApplication+Category.swift in Sources */,
 				AE195A861D1944BF00B626E5 /* UIBarButtonItem+extension.swift in Sources */,
@@ -671,6 +675,7 @@
 		64AAF6AF1A75DD68001366A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -680,8 +685,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = mh_dylib;
+				MODULEMAP_FILE = "";
 				PRODUCT_NAME = MudFramework;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -689,6 +696,7 @@
 		64AAF6B01A75DD68001366A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -698,6 +706,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = mh_dylib;
+				MODULEMAP_FILE = "";
 				PRODUCT_NAME = MudFramework;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>MudUI.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>64AAF6A21A75DD68001366A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AE195AC51D195EDC00B626E5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AE195ACE1D195EDD00B626E5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

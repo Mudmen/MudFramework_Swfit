@@ -9,24 +9,37 @@
 import Foundation
 import UIKit
 
-var MUD_LOG = false
+public var MUD_LOG = false
 
 //LOG
-func MudLog(format: String, args: CVarArgType...) {
+public func MudLog(format: String, args: CVarArgType...) {
     if MUD_LOG {
         NSLogv(format,getVaList(args))
     }
     // else do nothing
 }
 
-@inline(never) func MudPrint<T>(value: T) {
+@inline(never) public func MudPrint<T>(value: T) {
     if MUD_LOG {
         print(value, terminator: "")
     }
     // else do nothing
 }
 
-//VIEW
-let MUD_SCREEN_BOUNDS = (UIScreen.mainScreen().bounds)
-let MUD_SCREEN_WIDTH = (UIScreen.mainScreen().bounds.size.width)
-let MUD_SCREEN_HEIGHT = (UIScreen.mainScreen().bounds.size.height)
+/**
+ *  屏幕
+ */
+public struct MudScreen {
+    /// 屏幕高度
+    public static var height: CGFloat {
+        return (UIScreen.mainScreen().bounds.size.height)
+    }
+    /// 屏幕宽度
+    public static var width: CGFloat {
+        return (UIScreen.mainScreen().bounds.size.height)
+    }
+    /// 屏幕大小
+    public static var bounds: CGRect {
+        return (UIScreen.mainScreen().bounds)
+    }
+}

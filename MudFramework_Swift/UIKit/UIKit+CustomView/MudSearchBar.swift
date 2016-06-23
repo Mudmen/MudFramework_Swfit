@@ -64,14 +64,14 @@ class MudSearchBar: UIView,UITextFieldDelegate {
     func cancelButtonAction(sender: UIButton) {
         sender.enabled = false
         self.stextField.resignFirstResponder()
-        if self.delegate != nil && self.delegate?.respondsToSelector("searchBar:cancelDidSelected:") == true {
+        if self.delegate != nil  {
             self.delegate?.searchBar(self, cancelDidSelected: self.stextField.text)
         }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.stextField.resignFirstResponder()
-        if delegate != nil && self.delegate?.respondsToSelector("searchBar:searchDidSelected:") == true {
+        if delegate != nil  {
             self.delegate?.searchBar(self, searchDidSelected: self.stextField.text)
         }
         return true

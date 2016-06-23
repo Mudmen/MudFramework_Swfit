@@ -8,50 +8,45 @@
 
 import UIKit
 
-class MudTableViewController: UITableViewController {
+public class MudTableViewController: UITableViewController {
 
-   weak var dataDelegate: MudTableViewControllerdelegate?
-    var firstAppear = true
-    var isTopViewController = false
+   public weak var dataDelegate: MudTableViewControllerdelegate?
+   public private(set) var firstAppear = true
+   public private(set) var isTopViewController = false
     
-    override func viewDidLoad() {
-        super.viewDidLoad()        
-        becomeRequestResponder();
+    override public func viewDidLoad() {
+        super.viewDidLoad()
+        self.addNotificationObserver()
         initData()
         initView()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func viewFirstDidAppear(animated: Bool = true) {
+    public func viewFirstDidAppear(animated: Bool = true) {
         
     }
     
-    func initView() {
+    public func initView() {
         
     }
     
-    func initData() {
+    public func initData() {
         
     }
     
-    func refreshView() {
+    public func refreshView() {
         
     }
     
-    func refreshData() {
+    public func refreshData() {
         
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override public func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         self.view.endEditing(true)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override public func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if self.firstAppear {
             self.viewFirstDidAppear(animated)
@@ -60,30 +55,20 @@ class MudTableViewController: UITableViewController {
         self.isTopViewController = true
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override public func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         self.isTopViewController = false
-    }
-    
-    //MARK: - Private API
-    func becomeRequestResponder() {
-        MudRequestCenter.defaultCenter.addResponder(self)
-    }
-    
-    func removeRequestResponder() {
-        MudRequestCenter.defaultCenter.removeResponder(self)
     }
     
     //MARK: - deinit
     deinit {
         MudPrint("deinit MudTableViewController ====== ")
-        removeRequestResponder();
         removeNotificationObserver()
     }
 }
 
-extension MudTableViewController {
-    func pushToViewController(controller: UIViewController,animated: Bool) {
+public extension MudTableViewController {
+    public func pushToViewController(controller: UIViewController,animated: Bool) {
         controller.hidesBottomBarWhenPushed = true
         if self.navigationController != nil {
             self.navigationController?.pushViewController(controller, animated: animated)
@@ -96,7 +81,7 @@ extension MudTableViewController {
         }
     }
     
-    func popViewControllerAnimated(animated: Bool) {
+    public func popViewControllerAnimated(animated: Bool) {
         if self.navigationController != nil && self.navigationController!.viewControllers.count > 0 {
             if self.navigationController?.viewControllers[0] != self {
                 self.navigationController?.popViewControllerAnimated(animated)
@@ -106,24 +91,24 @@ extension MudTableViewController {
         self.dismissCurrentModalViewController()
     }
     
-    func popViewControllerWithData(data: AnyObject? ,animated: Bool) {
-        if self.dataDelegate != nil && self.dataDelegate?.respondsToSelector("dataFromTopViewController:tag:") != nil {
+    public func popViewControllerWithData(data: AnyObject? ,animated: Bool) {
+        if self.dataDelegate != nil {
             self.dataDelegate?.dataFromTopViewController(data,tag: String(UTF8String: object_getClassName(self)) )
         }
         self.navigationController?.popViewControllerAnimated(animated)
     }
     
-    func exitViewControllerWithData(data: AnyObject?) {
-        if self.dataDelegate != nil && self.dataDelegate?.respondsToSelector("dataFromTopViewController:tag:") != nil {
+    public func exitViewControllerWithData(data: AnyObject?) {
+        if self.dataDelegate != nil {
             self.dataDelegate?.dataFromTopViewController(data,tag: String(UTF8String: object_getClassName(self)) )
         }
     }
     
-    func popToBeforeControllerAnimated(animated: Bool) {
-        for var i = 0; i < self.navigationController?.viewControllers.count; i++ {
-            let tvc: UIViewController? = self.navigationController?.viewControllers[i]
-            if tvc != nil && tvc == self && i > 0{
-                let tovc: UIViewController? = self.navigationController?.viewControllers[i-2]
+    public func popToBeforeControllerAnimated(animated: Bool) {
+        for index in 0 ..< self.navigationController!.viewControllers.count {
+            let tvc: UIViewController? = self.navigationController?.viewControllers[index]
+            if tvc != nil && tvc == self && index > 0{
+                let tovc: UIViewController? = self.navigationController?.viewControllers[index-2]
                 if tovc != nil {
                     self.navigationController?.popToViewController(tovc!, animated: animated)
                 }
@@ -131,114 +116,114 @@ extension MudTableViewController {
         }
     }
     
-    func dismissCurrentModalViewController() {
+    public func dismissCurrentModalViewController() {
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
         })
     }
     
 }
 
-extension MudTableViewController {
-    func addNotificationObserver() {
+public extension MudTableViewController {
+    public func addNotificationObserver() {
         
     }
-    func removeNotificationObserver() {
+    public func removeNotificationObserver() {
         
     }
     
-    func addObserveNotificationWithName(aName: String) {
-        NSNotificationCenter.defaultCenter().addObserver(self,selector:"handNotification:",name: aName,object:nil)
+    public func addObserveNotificationWithName(aName: String) {
+        NSNotificationCenter.defaultCenter().addObserver(self,selector:#selector(MudTableViewController.handNotification(_:)),name: aName,object:nil)
     }
     
-    func addObserveNotificationWithName(aName: String, object anObject: AnyObject) {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handNotification:", name: aName, object: anObject)
+    public func addObserveNotificationWithName(aName: String, object anObject: AnyObject) {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MudTableViewController.handNotification(_:)), name: aName, object: anObject)
     }
     
-    func removeObserverNotificationWithName(aName: String) {
+    public func removeObserverNotificationWithName(aName: String) {
         NSNotificationCenter.defaultCenter().removeObserver(self,name:aName,object:nil)
     }
     
-    func removeObserverNotificationWithName(aName: String,anObject: AnyObject) {
+    public func removeObserverNotificationWithName(aName: String,anObject: AnyObject) {
         NSNotificationCenter.defaultCenter().removeObserver(self,name:aName,object:anObject)
     }
     
-    func postNotification(notification: NSNotification) {
+    public func postNotification(notification: NSNotification) {
         NSNotificationCenter.defaultCenter().postNotification(notification)
     }
     
-    func postNotificationName(aName: String?, anObject:AnyObject?) {
+    public func postNotificationName(aName: String?, anObject:AnyObject?) {
         NSNotificationCenter.defaultCenter().postNotificationName(aName!,object:anObject)
     }
     
-    func postNotificationName(aName: String, anObject:AnyObject, userInfo aUserInfo:  [NSObject : AnyObject]) {
+    public func postNotificationName(aName: String, anObject:AnyObject, userInfo aUserInfo:  [NSObject : AnyObject]) {
         NSNotificationCenter.defaultCenter().postNotificationName(aName,object:anObject,userInfo:aUserInfo)
     }
     
-    func handNotification(notification: NSNotification) {
+    public func handNotification(notification: NSNotification) {
         
     }
 }
 
-extension MudTableViewController {
-    func setBackBarButtonWithImage(image: UIImage?) {
+public extension MudTableViewController {
+    public func setBackBarButtonWithImage(image: UIImage?) {
         self.navigationItem.leftBarButtonItem = nil;
-        let backItem: UIBarButtonItem = UIBarButtonItem.itemWithImage(image, target: self, action: "onBackButtonAction:")
+        let backItem: UIBarButtonItem = UIBarButtonItem.itemWithImage(image, target: self, action: #selector(MudTableViewController.onBackButtonAction(_:)))
         self.navigationItem.leftBarButtonItem = backItem
     }
     
-    func setBackBarButtonWithCustomView(customView: UIView) {
+    public func setBackBarButtonWithCustomView(customView: UIView) {
         self.navigationItem.leftBarButtonItem = nil;
         let backItem:UIBarButtonItem = UIBarButtonItem(customView: customView)
         self.navigationItem.leftBarButtonItem = backItem
     }
     
-    func setLeftBarButtonWithImage(image: UIImage?) {
+    public func setLeftBarButtonWithImage(image: UIImage?) {
         self.navigationItem.leftBarButtonItem = nil;
-        let backItem: UIBarButtonItem = UIBarButtonItem.itemWithImage(image,target:self,action:"onLeftButtonAction:")
+        let backItem: UIBarButtonItem = UIBarButtonItem.itemWithImage(image,target:self,action:#selector(MudTableViewController.onLeftButtonAction(_:)))
         self.navigationItem.leftBarButtonItem = backItem
     }
     
-    func setRightBarButtonWithImage(image: UIImage?) {
+    public func setRightBarButtonWithImage(image: UIImage?) {
         self.navigationItem.rightBarButtonItem = nil;
-        let rightItem: UIBarButtonItem = UIBarButtonItem.itemWithImage(image ,target:self ,action:"onRightButtonAction:")
+        let rightItem: UIBarButtonItem = UIBarButtonItem.itemWithImage(image ,target:self ,action:#selector(MudTableViewController.onRightButtonAction(_:)))
         self.navigationItem.rightBarButtonItem = rightItem;
     }
     
-    func setRightBarButtonWithTitle(title: String,titleColor: UIColor? = nil,textAlignment: UIControlContentHorizontalAlignment = UIControlContentHorizontalAlignment.Right) {
+    public func setRightBarButtonWithTitle(title: String,titleColor: UIColor? = nil,textAlignment: UIControlContentHorizontalAlignment = UIControlContentHorizontalAlignment.Right) {
         self.navigationItem.rightBarButtonItem = nil;
-        let rightItem:UIBarButtonItem = UIBarButtonItem.itemWithTitle(title ,target:self ,action:"onRightButtonAction:",titleColor: titleColor,textAlignment: textAlignment)
+        let rightItem:UIBarButtonItem = UIBarButtonItem.itemWithTitle(title ,target:self ,action:#selector(MudTableViewController.onRightButtonAction(_:)),titleColor: titleColor,textAlignment: textAlignment)
         self.navigationItem.rightBarButtonItem = rightItem
     }
     
-    func setLeftBarButtonWithTitle(title: String,titleColor: UIColor? = nil,textAlignment: UIControlContentHorizontalAlignment = UIControlContentHorizontalAlignment.Left) {
+    public func setLeftBarButtonWithTitle(title: String,titleColor: UIColor? = nil,textAlignment: UIControlContentHorizontalAlignment = UIControlContentHorizontalAlignment.Left) {
         self.navigationItem.leftBarButtonItem = nil;
-        let leftItem:UIBarButtonItem = UIBarButtonItem.itemWithTitle(title,target:self,action: "onLeftButtonAction:",titleColor: titleColor,textAlignment: textAlignment)
+        let leftItem:UIBarButtonItem = UIBarButtonItem.itemWithTitle(title,target:self,action: #selector(MudTableViewController.onLeftButtonAction(_:)),titleColor: titleColor,textAlignment: textAlignment)
         self.navigationItem.leftBarButtonItem = leftItem
     }
     
-    func hiddenRightBarButton() {
+    public func hiddenRightBarButton() {
         self.navigationItem.rightBarButtonItem = nil;
         let rightItem: UIBarButtonItem = UIBarButtonItem.hiddenItem()
         self.navigationItem.setRightBarButtonItem(rightItem, animated: false)
     }
     
-    func hiddenBackBarButton() {
+    public func hiddenBackBarButton() {
         self.navigationItem.rightBarButtonItem = nil;
         let backItem: UIBarButtonItem = UIBarButtonItem.hiddenItem()
         self.navigationItem.leftBarButtonItems = [backItem]
     }
     
-    func setRightBarButtonWithCustomView(customView: UIView) {
+    public func setRightBarButtonWithCustomView(customView: UIView) {
         self.navigationItem.rightBarButtonItem = nil;
         let rightItem: UIBarButtonItem = UIBarButtonItem(customView: customView)
         self.navigationItem.rightBarButtonItem = rightItem
     }
     
-    func onLeftButtonAction(sender: AnyObject) {
+    public func onLeftButtonAction(sender: AnyObject) {
         self.onBackButtonAction(sender)
     }
     
-    func onBackButtonAction(sender: AnyObject?) {
+    public func onBackButtonAction(sender: AnyObject?) {
         if (self.navigationController?.viewControllers.count > 0) {
             let vc: UIViewController = self.navigationController!.viewControllers[0] 
             if (vc === self) {
@@ -250,7 +235,7 @@ extension MudTableViewController {
         self.popViewControllerAnimated(true)
     }
     
-    func onModalBackAction(sender: AnyObject?) {
+    public func onModalBackAction(sender: AnyObject?) {
         if (self.navigationController?.viewControllers.count > 0) {
             let vc: UIViewController = self.navigationController!.viewControllers[0] 
             if (vc === self) {
@@ -262,13 +247,13 @@ extension MudTableViewController {
         self.popViewControllerAnimated(true)
     }
     
-    func onRightButtonAction(sender: AnyObject?) {
+    public func onRightButtonAction(sender: AnyObject?) {
         
     }
     
 }
 
-protocol MudTableViewControllerdelegate: NSObjectProtocol {
+public protocol MudTableViewControllerdelegate: NSObjectProtocol {
     func dataFromTopViewController(data: AnyObject?,tag: String?)
 }
 

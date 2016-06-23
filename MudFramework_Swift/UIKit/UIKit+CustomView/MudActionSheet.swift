@@ -56,7 +56,7 @@ class MudActionSheet: UIView {
         self.darkView = UIView()
         self.darkView.alpha = 0
         self.darkView.userInteractionEnabled = true
-        self.darkView.frame = CGRectMake(0, 0, MUD_SCREEN_WIDTH, MUD_SCREEN_HEIGHT)
+        self.darkView.frame = CGRectMake(0, 0, MudScreen.width, MudScreen.height)
         self.darkView.backgroundColor = UIColor.colorWithRedValue(46, greenValue: 49, blueValue: 50, alpha: 1)
         self.addSubview(self.darkView)
         
@@ -71,7 +71,7 @@ class MudActionSheet: UIView {
         
         if (String.hasCharacter(title)) {
             //init title view
-            let titleLabel = UILabel(frame: CGRectMake(0, 0, MUD_SCREEN_WIDTH, MUD_ACTIONSHEET_TITLE_HEIGHT))
+            let titleLabel = UILabel(frame: CGRectMake(0, 0, MudScreen.width, MUD_ACTIONSHEET_TITLE_HEIGHT))
             titleLabel.font = UIFont.systemFontOfSize(12)
             titleLabel.textColor = UIColor.colorWithHex(0x88939a)
             titleLabel.textAlignment = NSTextAlignment.Center
@@ -98,10 +98,10 @@ class MudActionSheet: UIView {
                 btn.setBackgroundImage(UIImage(named: "moments_sheetbghl.png"), forState: UIControlState.Highlighted)
                 btn.addTarget(self, action: #selector(MudActionSheet.didClickBtn(_:)), forControlEvents: UIControlEvents.TouchUpInside)
                 let btnY = MUD_ACTIONSHEET_BUTTON_HEIGHT*CGFloat(index)+(String.hasCharacter(title) ? MUD_ACTIONSHEET_TITLE_HEIGHT : 0)
-                btn.frame = CGRectMake(0, btnY, MUD_SCREEN_WIDTH, MUD_ACTIONSHEET_BUTTON_HEIGHT)
+                btn.frame = CGRectMake(0, btnY, MudScreen.width, MUD_ACTIONSHEET_BUTTON_HEIGHT)
                 self.sheetBackgroundView.addSubview(btn)
                 
-                let lineView = UIView(frame: CGRectMake(0, btnY, MUD_SCREEN_WIDTH, 0.5))
+                let lineView = UIView(frame: CGRectMake(0, btnY, MudScreen.width, 0.5))
                 lineView.backgroundColor = UIColor.colorWithHex(0xeaeeef)
                 self.sheetBackgroundView.addSubview(lineView)
             }
@@ -113,14 +113,14 @@ class MudActionSheet: UIView {
             cancelBtn.backgroundColor = UIColor.colorWithRedValue(255, greenValue: 255, blueValue: 255, alpha: 0.95)
             cancelBtn.titleLabel?.font = UIFont.systemFontOfSize(17)
             cancelBtn.setBackgroundImage(UIImage(named: "moments_sheetbghl.png"), forState: UIControlState.Highlighted)
-            cancelBtn.addTarget(self, action: "didClickBtn:", forControlEvents: UIControlEvents.TouchUpInside)
+            cancelBtn.addTarget(self, action: #selector(MudActionSheet.didClickBtn(_:)), forControlEvents: UIControlEvents.TouchUpInside)
             let btnY = MUD_ACTIONSHEET_BUTTON_HEIGHT*CGFloat(buttonTitles.count)+(String.hasCharacter(title) ? MUD_ACTIONSHEET_TITLE_HEIGHT : 0)+5
-            cancelBtn.frame = CGRectMake(0, btnY, MUD_SCREEN_WIDTH, MUD_ACTIONSHEET_BUTTON_HEIGHT)
+            cancelBtn.frame = CGRectMake(0, btnY, MudScreen.width, MUD_ACTIONSHEET_BUTTON_HEIGHT)
             self.sheetBackgroundView.addSubview(cancelBtn)
             
             let originY: CGFloat = String.hasCharacter(title) ? MUD_ACTIONSHEET_TITLE_HEIGHT : 0
             let bottomH = originY + MUD_ACTIONSHEET_BUTTON_HEIGHT * CGFloat(buttonTitles.count) + MUD_ACTIONSHEET_BUTTON_HEIGHT + 5
-            self.sheetBackgroundView.frame = CGRectMake(0, MUD_SCREEN_HEIGHT, MUD_SCREEN_WIDTH, bottomH)
+            self.sheetBackgroundView.frame = CGRectMake(0, MudScreen.height, MudScreen.width, bottomH)
             
             self.frame = UIScreen.mainScreen().bounds
             self.backWindow.addSubview(self)
@@ -145,12 +145,12 @@ class MudActionSheet: UIView {
         self.darkView = UIView()
         self.darkView.alpha = 0
         self.darkView.userInteractionEnabled = true
-        self.darkView.frame = CGRectMake(0, 0, MUD_SCREEN_WIDTH, MUD_SCREEN_HEIGHT)
+        self.darkView.frame = CGRectMake(0, 0, MudScreen.width, MudScreen.height)
         self.darkView.backgroundColor = UIColor.colorWithRedValue(46, greenValue: 49, blueValue: 50, alpha: 1)
         self.addSubview(self.darkView)
 
         //add dissmiss gesture to dark view
-        let dismissGesture = UITapGestureRecognizer(target: self, action: "dismissAction:")
+        let dismissGesture = UITapGestureRecognizer(target: self, action: #selector(MudActionSheet.dismissAction(_:)))
         self.darkView.addGestureRecognizer(dismissGesture)
         
         //init all buttons background view
@@ -160,7 +160,7 @@ class MudActionSheet: UIView {
         
         if (String.hasCharacter(title)) {
             //init title view
-            let titleLabel = UILabel(frame: CGRectMake(0, 0, MUD_SCREEN_WIDTH, MUD_ACTIONSHEET_TITLE_HEIGHT))
+            let titleLabel = UILabel(frame: CGRectMake(0, 0, MudScreen.width, MUD_ACTIONSHEET_TITLE_HEIGHT))
             titleLabel.font = UIFont.systemFontOfSize(12)
             titleLabel.textColor = UIColor.colorWithHex(0x88939a)
             titleLabel.textAlignment = NSTextAlignment.Center
@@ -185,12 +185,12 @@ class MudActionSheet: UIView {
                 }
                 btn.setTitle(self.titles[index], forState: UIControlState.Normal)
                 btn.setBackgroundImage(UIImage(named: "moments_sheetbghl.png"), forState: UIControlState.Highlighted)
-                btn.addTarget(self, action: "didClickBtn:", forControlEvents: UIControlEvents.TouchUpInside)
+                btn.addTarget(self, action: #selector(MudActionSheet.didClickBtn(_:)), forControlEvents: UIControlEvents.TouchUpInside)
                 let btnY = MUD_ACTIONSHEET_BUTTON_HEIGHT*CGFloat(index)+(String.hasCharacter(title) ? MUD_ACTIONSHEET_TITLE_HEIGHT : 0)
-                btn.frame = CGRectMake(0, btnY, MUD_SCREEN_WIDTH, MUD_ACTIONSHEET_BUTTON_HEIGHT)
+                btn.frame = CGRectMake(0, btnY, MudScreen.width, MUD_ACTIONSHEET_BUTTON_HEIGHT)
                 self.sheetBackgroundView.addSubview(btn)
                 
-                let lineView = UIView(frame: CGRectMake(0, btnY, MUD_SCREEN_WIDTH, 0.5))
+                let lineView = UIView(frame: CGRectMake(0, btnY, MudScreen.width, 0.5))
                 lineView.backgroundColor = UIColor.colorWithHex(0xeaeeef)
                 self.sheetBackgroundView.addSubview(lineView)
             }
@@ -202,14 +202,14 @@ class MudActionSheet: UIView {
             cancelBtn.backgroundColor = UIColor.colorWithRedValue(255, greenValue: 255, blueValue: 255, alpha: 0.95)
             cancelBtn.titleLabel?.font = UIFont.systemFontOfSize(17)
             cancelBtn.setBackgroundImage(UIImage(named: "moments_sheetbghl.png"), forState: UIControlState.Highlighted)
-            cancelBtn.addTarget(self, action: "didClickBtn:", forControlEvents: UIControlEvents.TouchUpInside)
+            cancelBtn.addTarget(self, action: #selector(MudActionSheet.didClickBtn(_:)), forControlEvents: UIControlEvents.TouchUpInside)
             let btnY = MUD_ACTIONSHEET_BUTTON_HEIGHT*CGFloat(buttonTitles.count)+(String.hasCharacter(title) ? MUD_ACTIONSHEET_TITLE_HEIGHT : 0)+5
-            cancelBtn.frame = CGRectMake(0, btnY, MUD_SCREEN_WIDTH, MUD_ACTIONSHEET_BUTTON_HEIGHT)
+            cancelBtn.frame = CGRectMake(0, btnY, MudScreen.width, MUD_ACTIONSHEET_BUTTON_HEIGHT)
             self.sheetBackgroundView.addSubview(cancelBtn)
             
             let originY: CGFloat = String.hasCharacter(title) ? MUD_ACTIONSHEET_TITLE_HEIGHT : 0
             let bottomH = originY + MUD_ACTIONSHEET_BUTTON_HEIGHT * CGFloat(buttonTitles.count) + MUD_ACTIONSHEET_BUTTON_HEIGHT + 5
-            self.sheetBackgroundView.frame = CGRectMake(0, MUD_SCREEN_HEIGHT, MUD_SCREEN_WIDTH, bottomH)
+            self.sheetBackgroundView.frame = CGRectMake(0, MudScreen.height, MudScreen.width, bottomH)
             
             self.frame = UIScreen.mainScreen().bounds
             self.backWindow.addSubview(self)
@@ -243,7 +243,7 @@ class MudActionSheet: UIView {
     
     internal func didClickBtn(sender: UIButton) {
         self.dismissAction(nil)
-        if self.delegate != nil && self.delegate?.respondsToSelector("actionSheet:didSelectedButtonAtIndex:") == true {
+        if self.delegate != nil && self.delegate?.respondsToSelector(#selector(MudActionSheetDelegate.actionSheet(_:didSelectedButtonAtIndex:))) == true {
             self.delegate!.actionSheet!(self, didSelectedButtonAtIndex: sender.tag-100)
         }
     }

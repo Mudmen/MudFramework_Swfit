@@ -9,15 +9,15 @@
 import Foundation
 import UIKit
 
-extension String {
+public extension String {
     //MARK: - String format
-    static func isValidString(string: String,format: String)->Bool {
+    public static func isValidString(string: String,format: String)->Bool {
         let emailTest = NSPredicate(format: "SELF MATCHES %@", format)
         let ret: Bool = emailTest.evaluateWithObject(string)
         return ret
     }
     
-    static func isEmptyString(str: String?)->Bool {
+    public static func isEmptyString(str: String?)->Bool {
         if str == nil {
             return true
         }
@@ -27,7 +27,7 @@ extension String {
         return false
     }
     
-    static func hasCharacter(str: String?)->Bool {
+    public static func hasCharacter(str: String?)->Bool {
         if String.isEmptyString(str) {
             return false
         }
@@ -44,7 +44,7 @@ extension String {
         return true
     }
     
-    static func isNotEmptyString(str: String?)->Bool {
+    public static func isNotEmptyString(str: String?)->Bool {
         if String.isEmptyString(str) {
             return false
         }
@@ -52,11 +52,11 @@ extension String {
     }
     
     //MARK: - String Preprotitys
-    func length()->Int {
+    public func length()->Int {
         return self.characters.count
     }
     
-    func stringToNSDate()->NSDate {
+    public func stringToNSDate()->NSDate {
         let dateFormatter: NSDateFormatter = NSDateFormatter()
         var format: String = "yyyy-MM-dd HH:mm:ss";
         if (self.length() < format.length())
@@ -80,7 +80,7 @@ extension String {
         }
     }
     
-    func stringToLocalizedTime()->String {
+    public func stringToLocalizedTime()->String {
         let tcreated: NSTimeInterval = (self as NSString).doubleValue
         let postDate = NSDate(timeIntervalSince1970: tcreated)
         let format: NSDateFormatter = NSDateFormatter()
@@ -93,7 +93,7 @@ extension String {
         return receiveTime
     }
     
-    func stringToTime()->String {
+    public func stringToTime()->String {
         let tcreated: NSTimeInterval = (self as NSString).doubleValue
         let postDate = NSDate(timeIntervalSince1970: tcreated)
         let format: NSDateFormatter = NSDateFormatter()
@@ -105,7 +105,7 @@ extension String {
         return receiveTime
     }
     
-    static func currentDateString()->String {
+    public static func currentDateString()->String {
         let curDate: NSDate = NSDate()
         let dateFormatter: NSDateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
@@ -113,13 +113,13 @@ extension String {
     }
     
     //MARK: - Substring
-    func getSubstringFromIndex(index: Int,distance: Int)->String {
+    public func getSubstringFromIndex(index: Int,distance: Int)->String {
         let sIndex = self.startIndex.advancedBy(index)
         let eIndex = sIndex.advancedBy(distance)
         return self.substringToIndex(eIndex)
     }
     
-    func compareOtherString(string: String!)->NSComparisonResult {
+    public func compareOtherString(string: String!)->NSComparisonResult {
         if self.intValue > string.intValue {
             return NSComparisonResult.OrderedAscending
         }

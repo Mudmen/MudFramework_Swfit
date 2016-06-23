@@ -71,7 +71,7 @@ class MudStarOverlayImageView: UIImageView {
         
         if self.window != nil {
             if emitterTimer == nil {
-                emitterTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "randomizeEmitterPosition", userInfo: nil, repeats: true)
+                emitterTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(MudStarOverlayImageView.randomizeEmitterPosition), userInfo: nil, repeats: true)
             }
         } else if emitterTimer != nil {
             emitterTimer?.invalidate()
