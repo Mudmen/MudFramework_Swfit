@@ -8,9 +8,9 @@
 
 import Foundation
 
-extension Dictionary {
+public extension Dictionary {
     
-    static func hasContent(dic: MudDictionary?)->Bool {
+    public static func hasContent(dic: MudDictionary?)->Bool {
         if dic == nil {
             return false
         }
@@ -22,7 +22,7 @@ extension Dictionary {
         return true
     }
     
-    static func isEmpty(object: AnyObject?)->Bool {
+    public static func isEmpty(object: AnyObject?)->Bool {
         
         if object == nil {
             return true
@@ -41,7 +41,7 @@ extension Dictionary {
         return false
     }
     
-    func stringForKey(key: Key)->String {
+    public func stringForKey(key: Key)->String {
         if let tvalue = self[key] as? String {
             return tvalue
         }
@@ -51,7 +51,7 @@ extension Dictionary {
         return ""
     }
     
-    func stringForKey(key: Key,placeholder: String)->String {
+    public func stringForKey(key: Key,placeholder: String)->String {
         if let tvalue = self[key] as? String {
             if String.isNotEmptyString(tvalue) {
                 return tvalue
@@ -60,7 +60,7 @@ extension Dictionary {
         return placeholder
     }
     
-    func stringForKey(key: Key,placeholderKey: Key)->String {
+    public func stringForKey(key: Key,placeholderKey: Key)->String {
         if let tvalue = self[key] as? String {
             if String.isNotEmptyString(tvalue) {
                 return tvalue
@@ -69,7 +69,7 @@ extension Dictionary {
         return self.stringForKey(placeholderKey)
     }
     
-    func intForKey(key: Key,placeholder: Int? = 0)->Int {
+    public func intForKey(key: Key,placeholder: Int? = 0)->Int {
         if let tvalue = self[key] as? NSNumber {
             return tvalue.integerValue
         } else if let svalue = self[key] as? String {
@@ -78,7 +78,7 @@ extension Dictionary {
         return placeholder!
     }
     
-    func numberForKey(key: Key)->NSNumber {
+    public func numberForKey(key: Key)->NSNumber {
         if let tvalue = self[key] as? NSNumber {
             return tvalue
         } else if let svalue = self[key] as? String {
@@ -87,7 +87,7 @@ extension Dictionary {
         return NSNumber(integer: 0)
     }
     
-    func numberForKey(key: Key,placeholder: NSNumber)->NSNumber {
+    public func numberForKey(key: Key,placeholder: NSNumber)->NSNumber {
         if let tvalue = self[key] as? NSNumber {
             return tvalue
         } else if let svalue = self[key] as? String {
@@ -96,7 +96,7 @@ extension Dictionary {
         return placeholder
     }
     
-    func numberForKey(key: Key,placeholderKey: Key)->NSNumber {
+    public func numberForKey(key: Key,placeholderKey: Key)->NSNumber {
         if let tvalue = self[key] as? NSNumber {
             return tvalue
         } else if let svalue = self[key] as? String {
@@ -105,7 +105,7 @@ extension Dictionary {
         return self.numberForKey(placeholderKey)
     }
     
-    func boolForKey(key: Key)->Bool {
+    public func boolForKey(key: Key)->Bool {
         if let tvalue = self[key] as? NSNumber {
             return tvalue.boolValue
         } else if let svalue = self[key] as? String {
@@ -114,7 +114,7 @@ extension Dictionary {
         return false
     }
     
-    func floatForKey(key: Key)->Float {
+    public func floatForKey(key: Key)->Float {
         if let tvalue = self[key] as? NSNumber {
             return tvalue.floatValue
         } else if let svalue = self[key] as? String {
@@ -123,28 +123,28 @@ extension Dictionary {
         return 0
     }
     
-    func arrayForKey(akey: Key)->[AnyObject] {
+    public func arrayForKey(akey: Key)->[AnyObject] {
         if let tvalue = self[akey] as? [AnyObject] {
             return tvalue
         }
         return []
     }
     
-    func dictionaryArrayForKey(akey: Key)->MudDictionaryArray {
+    public func dictionaryArrayForKey(akey: Key)->MudDictionaryArray {
         if let tvalue = self[akey] as? MudDictionaryArray {
             return tvalue
         }
         return []
     }
     
-    func dictionaryForKey(akey: Key)->MudDictionary {
+    public func dictionaryForKey(akey: Key)->MudDictionary {
         if let tvalue = self[akey] as? MudDictionary {
             return tvalue
         }
         return MudDictionary()
     }
     
-    func isEmptyValueForKey(aKey: Key)->Bool {
+    public func isEmptyValueForKey(aKey: Key)->Bool {
         let tvalue = self[aKey]
         if tvalue == nil {
             return true
@@ -156,7 +156,7 @@ extension Dictionary {
         return false
     }
     
-    func isNotEmptyValueForKey(aKey: Key)->Bool {
+    public func isNotEmptyValueForKey(aKey: Key)->Bool {
         let tvalue = self[aKey]
         if tvalue == nil {
             return false
@@ -168,10 +168,33 @@ extension Dictionary {
         return true
     }
     
+    /**
+     添加其它字典的数据
+     
+     - parameter otherDictionary: 其它字典
+     */
+    public mutating func addOtherDictionary(otherDictionary: [Key : Value]?) {
+        if otherDictionary == nil {
+            return
+        }
+        for dkey in otherDictionary!.keys {
+            let value = otherDictionary![dkey]
+            self.setOptionalValue(value, forKey: dkey)
+        }
+    }
+    
+    public mutating func setOptionalValue(value: Value?, forKey key: Key) {
+        if value == nil {
+            return
+        }
+        self.updateValue(value!, forKey: key)
+    }
+    
+
 }
 
-extension NSDictionary {
-    func stringForKey(aKey: String)->String {
+public extension NSDictionary {
+    public func stringForKey(aKey: String)->String {
         if let tvalue = self[aKey] as? String {
             return tvalue
         }

@@ -8,8 +8,8 @@
 
 import Foundation
 
-extension NSJSONSerialization {
-    class func jsonStringWithObject(object: AnyObject)->String? {
+public extension NSJSONSerialization {
+    public class func jsonStringWithObject(object: AnyObject)->String? {
         var jsonString:String?
         var jsonData: NSData?
         do {
@@ -25,7 +25,7 @@ extension NSJSONSerialization {
         return jsonString!;
     }
     
-    class func arrayWithJsonString(jString: String)->[AnyObject]? {
+    public class func arrayWithJsonString(jString: String)->[AnyObject]? {
         var array: [AnyObject]?
         let data = jString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
         if data != nil {

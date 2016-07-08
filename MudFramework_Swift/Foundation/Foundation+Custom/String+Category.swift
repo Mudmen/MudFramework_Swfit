@@ -125,5 +125,38 @@ public extension String {
         }
         return NSComparisonResult.OrderedDescending
     }
+    
+    /**
+     16进制字符串 转NSData
+     
+     - parameter hexString: 字符串
+     
+     - returns: NSData
+     */
+    public static func dataFromHexString(hexString: String) -> NSData?
+    {
+        var str = hexString.stringByReplacingOccurrencesOfString("<", withString: "")
+        str = hexString.stringByReplacingOccurrencesOfString(">", withString: "")
+        str = hexString.stringByReplacingOccurrencesOfString(" ", withString: "")
+        
+        let nsstr = str as NSString
+        
+        let chars = nsstr.UTF8String
+        var i = 0
+        let len = nsstr.length;
+        
+        let data = NSMutableData(capacity: len/2)
+        var byteChars:[CChar] = [0,0]
+        
+        var wholeByte :CUnsignedLong
+        while (i < len)
+        {
+            byteChars[0] = chars[i++];
+            byteChars[1] = chars[i++];
+            wholeByte = strtoul(byteChars, nil, 16);
+            data?.appendBytes(&wholeByte, length: 1)
+        }
+        return data;
+    }
 
 }
